@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../logo.svg";
 
-function Event() {
+function EventSingle() {
   return (
     <div className="event-card">
       <div className="event-thumbnail">
@@ -23,4 +23,4 @@ function Event() {
   );
 }
 
-export default Event;
+export default EventSingle;

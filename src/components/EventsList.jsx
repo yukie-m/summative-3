@@ -1,12 +1,12 @@
 import React from "react";
-import Event from "./Event";
+import EventSingle from "./EventSingle";
 
 function EventsList() {
   return (
     <div>
-      <Event />
-      <Event />
-      <Event />
+      <EventSingle />
+      <EventSingle />
+      <EventSingle />
     </div>
   );
 }
