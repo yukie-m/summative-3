@@ -10,8 +10,6 @@ import EventDetail from "./components/EventDetail";
 function App() {
   return (
     <div className="App">
-      <Home />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/view-events" element={<EventsList />} />

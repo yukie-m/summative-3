@@ -11,6 +11,8 @@ function EventDetail() {
   let location = useLocation();
   const [eventObject, setEventObject] = useState({});
 
+  //   console.log(location);
+
   useEffect(() => {
     loadComments();
   }, []);
@@ -21,7 +23,7 @@ function EventDetail() {
   const loadComments = (event) => {
     if (location.state) {
       console.log(
-        ">> ",
+        ">> STATE ",
         `http://localhost:4000/api/view-event-by-id/${location.state}`
       );
       axios
