@@ -1,18 +1,38 @@
 import React from "react";
-import logo from "../logo.svg";
+import "../css/card.scss";
+import { useNavigate } from "react-router-dom";
+import NoImage from "./NoImage";
 
-function EventSingle() {
+function EventSingle(props) {
+  console.log(props);
+  const navigate = useNavigate();
+
+  if (!props.detailsObj.thumb) {
+    console.log(">> no img for ", props.detailsObj.title);
+  } else {
+    console.log(">> image == ", props.detailsObj.thumb);
+  }
   return (
-    <div className="event-card">
+    <div
+      className="event-card"
+      href=""
+      onClick={() => {
+        navigate("/event-detail", { state: props.detailsObj._id });
+      }}
+    >
       <div className="event-thumbnail">
-        <img src={logo} />
+        {props.detailsObj.thumb ? (
+          <img src={`./images/${props.detailsObj.thumb}`} />
+        ) : (
+          <img src="./images/noPhoto.png" />
+        )}
       </div>
       <div className="event-details">
-        <h2 className="event-name">Event Name</h2>
-        <div className="event-category">Category</div>
+        <h4 className="event-name">{props.detailsObj.title} </h4>
+        <div className="event-category">{props.detailsObj.category}</div>
         <div className="flex space-between">
-          <div className="event-date">Date</div>
-          <div className="event-location">Location</div>
+          <div className="event-date">{props.detailsObj.date}</div>
+          <div className="event-location">{props.detailsObj.location}</div>
         </div>
         <div className="flex space-between">
           <div className="event-comments">12</div>
