@@ -12,16 +12,22 @@ function EventSingle(props) {
     console.log(">> image == ", props.detailsObj.thumb);
   }
   return (
-    <div className="event-card">
+    <div
+      className="event-card"
+      href=""
+      onClick={() => {
+        navigate("/event-detail", { state: props.detailsObj._id });
+      }}
+    >
       <div className="event-thumbnail">
         {props.detailsObj.thumb ? (
           <img src={`./images/${props.detailsObj.thumb}`} />
         ) : (
-          <NoImage />
+          <img src="./images/noPhoto.png" />
         )}
       </div>
       <div className="event-details">
-        <h2 className="event-name">{props.detailsObj.title} </h2>
+        <h4 className="event-name">{props.detailsObj.title} </h4>
         <div className="event-category">{props.detailsObj.category}</div>
         <div className="flex space-between">
           <div className="event-date">{props.detailsObj.date}</div>
