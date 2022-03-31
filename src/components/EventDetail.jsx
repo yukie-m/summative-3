@@ -46,7 +46,23 @@ function EventDetail() {
         )}
       </div>
 
-      <div className="title">{eventObject.title}</div>
+      <div className="title">
+        <h5> {eventObject.title}</h5>
+      </div>
+      <div className="event-category">
+        <p> {eventObject.category}</p>
+      </div>
+      <div className="event-date">{eventObject.date}</div>
+      <div className="event-location">{eventObject.location}</div>
+      <div className="event-host">Organised by {eventObject.host}</div>
+
+      <div className="event-description">
+        <p>{eventObject.description}</p>
+      </div>
+
+      <div className="event-link">
+        <a href="{eventObject.link}">Website Link</a>
+      </div>
 
       {/* <div className="all-comments">
         <CommentsView commentsArray={eventObject.comments} />
