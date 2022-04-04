@@ -1,0 +1,52 @@
+@use "./colors";
+
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  .no-image img {
+    width: 50%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .title {
+    margin: 0;
+  }
+
+  .event-details {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .event-category {
+    border: 1px colors.$dark-gray solid;
+    border-radius: 5px;
+    color: colors.$dark-gray;
+    width: min-content;
+    padding: 2px 4px;
+  }
+
+  .event-date {
+    font-size: small;
+  }
+
+  .event-location {
+    font-size: small;
+  }
+
+  .event-comments {
+    font-size: small;
+  }
+
+  .event-likes {
+    font-size: small;
+  }
+}

@@ -2,6 +2,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import NoImage from "./NoImage";
+import "../css/eventDetail.scss";
+
 // import CommentAdd from "./CommentAdd";
 // import CommentsView from "./CommentsView";
 // import { debugObj } from "../js/shared.js";
@@ -47,15 +49,16 @@ function EventDetail() {
       </div>
 
       <div className="title">
-        <h5> {eventObject.title}</h5>
+        <h2> {eventObject.title}</h2>
       </div>
-      <div className="event-category">
-        <p> {eventObject.category}</p>
+      <div className="flex items-center gap-10">
+        <div className="event-category">{eventObject.category}</div>
+        <div className="event-location">{eventObject.location}</div>
       </div>
-      <div className="event-date">{eventObject.date}</div>
-      <div className="event-location">{eventObject.location}</div>
-      <div className="event-host">Organised by {eventObject.host}</div>
-
+      <div className="flex items-center gap-10">
+        <div className="event-date">{eventObject.date}</div>
+      </div>
+      <div className="event-host">Organizer: {eventObject.host}</div>
       <div className="event-description">
         <p>{eventObject.description}</p>
       </div>
