@@ -9,6 +9,10 @@ import EventDetail from "./components/EventDetail";
 import CreateEvent from "./components/CreateEvent";
 
 function App() {
+  useEffect(() => {
+    document.title = "Eventful";
+  }, []);
+
   return (
     <div className="App">
       <Routes>
