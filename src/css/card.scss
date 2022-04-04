@@ -1,35 +1,44 @@
+@use "./colors";
+
 .no-image img {
   width: 50%;
 }
 
 .event-card {
-  margin: 1rem;
+  margin: 0.5rem;
+  margin-bottom: 1.5rem;
   display: flex;
-  width: 100%;
   font-size: small;
+  gap: 10px;
 
   .event-thumbnail {
     width: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
-  }
-  img {
-    width: 90%;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
   }
 
   .event-name {
-    margin: 5px 0;
+    margin: 0;
+    font-size: 16px;
   }
 
   .event-details {
     width: 50%;
     display: flex;
     flex-direction: column;
+    gap: 5px;
   }
 
   .event-category {
-    border: 1px gray solid;
+    border: 1px colors.$dark-gray solid;
+    border-radius: 5px;
+    color: colors.$dark-gray;
     width: min-content;
     padding: 2px 4px;
   }

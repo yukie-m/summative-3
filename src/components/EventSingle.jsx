@@ -28,7 +28,7 @@ function EventSingle(props) {
         )}
       </div>
       <div className="event-details">
-        <h4 className="event-name">{props.detailsObj.title} </h4>
+        <h2 className="event-name">{props.detailsObj.title} </h2>
         <div className="event-category">{props.detailsObj.category}</div>
         <div className="flex space-between">
           <div className="event-date">{props.detailsObj.date}</div>
