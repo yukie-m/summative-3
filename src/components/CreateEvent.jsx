@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../css/form.scss";
+import { MdArrowBack } from "react-icons/md";
 
 function CreateEvent() {
   let navigate = useNavigate();
@@ -45,7 +46,7 @@ function CreateEvent() {
   return (
     <>
       <button onClick={onGoBack} className="left-arrow" role="submit">
-        ←
+        <MdArrowBack />
       </button>
       <div className="create-listing-wrap">
         <h1>Create Event</h1>
@@ -58,6 +59,7 @@ function CreateEvent() {
               type="text"
               placeholder=""
               name="event-title"
+              required
             />
           </label>
           <label>
@@ -76,6 +78,7 @@ function CreateEvent() {
               ref={categoryInputRef}
               placeholder="select"
               name="category_name"
+              required
             >
               <option value="Business">Business</option>
               <option value="Finance">Finance</option>
@@ -90,6 +93,7 @@ function CreateEvent() {
               ref={locationInputRef}
               placeholder="select"
               name="location_name"
+              required
             >
               <option value="Auckland">Auckland</option>
               <option value="Wellington">Wellington</option>
@@ -110,7 +114,12 @@ function CreateEvent() {
 
           <label>
             <span>Upload image</span>
-            <select ref={imageInputRef} placeholder="select" name="thumb">
+            <select
+              ref={imageInputRef}
+              placeholder="select"
+              name="thumb"
+              required
+            >
               <option value="business.jpg">Business</option>
               <option value="finance.jpg">Finance</option>
               <option value="it.jpg">IT</option>
@@ -127,6 +136,7 @@ function CreateEvent() {
               type="text"
               placeholder=""
               name="event_details"
+              required
             />
           </label>
           <button role="submit">Create</button>

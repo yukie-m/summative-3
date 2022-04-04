@@ -6,7 +6,11 @@
   align-items: center;
   width: 80%;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding-bottom: 2rem;
+
+  h1 {
+    margin-top: 0;
+  }
 
   form {
     display: flex;

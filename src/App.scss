@@ -1,4 +1,5 @@
 //  --- Utility classes
+@use "./css/colors";
 
 .flex {
   display: flex;
@@ -14,4 +15,12 @@
 
 .gap-10 {
   gap: 10px;
+}
+// icon
+.left-arrow {
+  font-size: 2.2rem;
+  border: none;
+  background-color: white;
+  margin-top: 0.8rem;
+  margin-left: 0.5rem;
 }
