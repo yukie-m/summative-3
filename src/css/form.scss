@@ -31,15 +31,16 @@
     border: 1px solid lightgrey;
     border-radius: 5px;
   }
-  textarea {
-    padding: 2rem;
-  }
+
+  // textarea {
+  //   padding: 2rem;
+  // }
   button {
     margin-top: 1.2rem;
     border: 2px solid colors.$green;
-    padding: 1rem;
-    font-size: 1.6rem;
-    font-weight: bold;
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 550;
     background-color: white;
   }
 }
