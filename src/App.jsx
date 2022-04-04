@@ -6,6 +6,7 @@ import "./App.scss";
 import EventsList from "./components/EventsList";
 import EventSingle from "./components/EventSingle";
 import EventDetail from "./components/EventDetail";
+import CreateEvent from "./components/CreateEvent";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
 
         <Route path="/listing" element={<EventSingle />} />
         <Route path="/event-detail" element={<EventDetail />} />
-        {/* <Route path='/add-writer' element={<WriterAdd />} /> */}
+        <Route path="/create-event" element={<CreateEvent />} />
         {/* <Route path='/logged-out' element={<LoggedOut />} /> */}
       </Routes>
     </div>

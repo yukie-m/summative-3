@@ -61,7 +61,7 @@ function EventDetail() {
       </div>
 
       <div className="event-link">
-        <a href="{eventObject.link}">Website Link</a>
+        <a href={eventObject.link}>Website Link</a>
       </div>
 
       {/* <div className="all-comments">
