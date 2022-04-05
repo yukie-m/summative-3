@@ -1,18 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import EventsList from "../components/EventsList";
+import Nav from "../components/Nav";
 
 function Home() {
   const navigate = useNavigate();
   return (
     <div>
-      <div
-        onClick={() => {
-          navigate("/create-event");
-        }}
-      >
-        Create Event
-      </div>
+      <Nav />
+
       <EventsList />
     </div>
   );
