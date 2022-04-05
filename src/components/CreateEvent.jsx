@@ -10,6 +10,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import { MdDoneAll } from "react-icons/md";
 import { IoIosClose } from "react-icons/io";
 
+//onChange event target value
 const categoryOptions = [
   { value: "Business", label: "Business" },
   { value: "Finance", label: "Finance" },

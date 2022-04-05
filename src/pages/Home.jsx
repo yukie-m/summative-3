@@ -1,11 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import EventsList from "../components/EventsList";
 import Nav from "../components/Nav";
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <div>
       <Nav />
+      <div
+        onClick={() => {
+          navigate("/delete-event");
+        }}
+      >
+        <p>Delete Event</p>
+      </div>
       <EventsList />
     </div>
   );
