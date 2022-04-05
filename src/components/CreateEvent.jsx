@@ -24,10 +24,10 @@ const locationOptions = [
   { value: "Virtual", label: "Virtual" },
 ];
 const imageOptions = [
-  { value: "business.jpg", label: "Business" },
-  { value: "finance.jpg", label: "Finance" },
-  { value: "it.jpg", label: "IT" },
-  { value: "women.jpg", label: "Women" },
+  { value: "business.jpg", label: "Business Photo" },
+  { value: "finance.jpg", label: "Finance Photo" },
+  { value: "it.jpg", label: "IT Photo" },
+  { value: "women.jpg", label: "Women Photo" },
   { value: "noPhoto.png", label: "No Photo" },
 ];
 
@@ -156,7 +156,7 @@ function CreateEvent() {
             </label>
 
             <label>
-              <span>Slect image</span>
+              <span>Select image</span>
               <Select
                 ref={imageInputRef}
                 options={imageOptions}
