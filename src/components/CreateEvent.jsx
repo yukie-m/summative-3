@@ -2,12 +2,42 @@ import React from "react";
 import axios from "axios";
 import { useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Select, { components } from "react-select";
 import Modal from "react-modal";
 import "../css/form.scss";
 import { MdArrowBack } from "react-icons/md";
 import { MdArrowDropDown } from "react-icons/md";
 import { MdDoneAll } from "react-icons/md";
 import { IoIosClose } from "react-icons/io";
+
+const categoryOptions = [
+  { value: "Business", label: "Business" },
+  { value: "Finance", label: "Finance" },
+  { value: "IT", label: "IT" },
+  { value: "Engineer", label: "Engineer" },
+];
+
+const locationOptions = [
+  { value: "Auckland", label: "Auckland" },
+  { value: "Wellington", label: "Wellington" },
+  { value: "Christchurch", label: "Christchurch" },
+  { value: "Virtual", label: "Virtual" },
+];
+const imageOptions = [
+  { value: "business.jpg", label: "Business" },
+  { value: "finance.jpg", label: "Finance" },
+  { value: "it.jpg", label: "IT" },
+  { value: "women.jpg", label: "Women" },
+  { value: "noPhoto.png", label: "No Photo" },
+];
+
+const DropdownIndicator = (props) => {
+  return (
+    <components.DropdownIndicator {...props}>
+      <MdArrowDropDown style={{ fontSize: "24px" }} />
+    </components.DropdownIndicator>
+  );
+};
 
 function CreateEvent() {
   let navigate = useNavigate();
@@ -91,32 +121,28 @@ function CreateEvent() {
 
             <label>
               <span>Category</span>
-              <select
+              <Select
                 ref={categoryInputRef}
+                options={categoryOptions}
                 placeholder="select"
                 name="category_name"
+                className="hide-default"
+                components={{ DropdownIndicator }}
                 required
-              >
-                <option value="Business">Business</option>
-                <option value="Finance">Finance</option>
-                <option value="IT">IT</option>
-                <option value="Engineer">Engineer</option>
-              </select>
+              ></Select>
             </label>
 
             <label>
               <span>Location</span>
-              <select
+              <Select
                 ref={locationInputRef}
+                options={locationOptions}
                 placeholder="select"
                 name="location_name"
+                className="hide-default"
+                components={{ DropdownIndicator }}
                 required
-              >
-                <option value="Auckland">Auckland</option>
-                <option value="Wellington">Wellington</option>
-                <option value="Christchurch">Christchurch</option>
-                <option value="Virtual">Virtual</option>
-              </select>
+              ></Select>
             </label>
 
             <label>
@@ -131,19 +157,15 @@ function CreateEvent() {
 
             <label>
               <span>Slect image</span>
-              <select
+              <Select
                 ref={imageInputRef}
+                options={imageOptions}
                 placeholder="select"
                 name="thumb"
+                className="hide-default"
+                components={{ DropdownIndicator }}
                 required
-              >
-                <option value="business.jpg">Business</option>
-                <option value="finance.jpg">Finance</option>
-                <option value="it.jpg">IT</option>
-                <option value="enginner.jpg">Enginner</option>
-                <option value="women.jpg">Women</option>
-                <option value="noPhoto.png">No Photo</option>
-              </select>
+              ></Select>
             </label>
 
             <label>
