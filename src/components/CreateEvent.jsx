@@ -186,14 +186,38 @@ function CreateEvent() {
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           ariaHideApp={false}
-          // className="modal-success"
+          style={{
+            overlay: {
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(240, 240, 240, 0.75)",
+            },
+            content: {
+              position: "absolute",
+              top: "18rem",
+              left: "5rem",
+              right: "5rem",
+              bottom: "18rem",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              border: "1px solid black",
+              background: "#fff",
+              overflow: "auto",
+              WebkitOverflowScrolling: "touch",
+              borderRadius: "4px",
+              outline: "none",
+              padding: "20px",
+            },
+          }}
         >
-          <div className="close">
-            <IoIosClose size={40} color={"#6c6666"} onClick={closeModal} />
-          </div>
           <div className="check-success">
-            <MdDoneAll size={52} color={"#fe0000"} />
-            <p>Success</p>
+            <p>Posted</p>
+            <MdDoneAll size={52} color={"#006ba6"} />
           </div>
         </Modal>
       </div>
