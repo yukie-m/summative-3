@@ -31,7 +31,9 @@ function EventSingle(props) {
         <h2 className="event-name">{props.detailsObj.title} </h2>
         <div className="event-category">{props.detailsObj.category}</div>
         <div className="flex space-between">
-          <div className="event-date">{props.detailsObj.date}</div>
+          <div className="event-date">
+            {props.detailsObj.date ? props.detailsObj.date : <p>TBD</p>}
+          </div>
           <div className="event-location">{props.detailsObj.location}</div>
         </div>
         <div className="flex space-between">
