@@ -1,28 +1,28 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import NoImage from "./NoImage";
 import "../css/eventDetail.scss";
+import CommentsList from "./CommentsList";
+import CommentAdd from "./CommentAdd";
 
-// import CommentAdd from "./CommentAdd";
-// import CommentsView from "./CommentsView";
+import NoImage from "./NoImage";
 // import { debugObj } from "../js/shared.js";
 
 function EventDetail() {
   let navigate = useNavigate();
   let location = useLocation();
   const [eventObject, setEventObject] = useState({});
-
+  const [comments, setComments] = useState([]);
   //   console.log(location);
 
   useEffect(() => {
-    loadComments();
+    loadEventDetails();
   }, []);
 
   const onGoBack = (event) => {
     navigate(-1);
   };
-  const loadComments = (event) => {
+  const loadEventDetails = (event) => {
     if (location.state) {
       console.log(
         ">> STATE ",
@@ -33,9 +33,14 @@ function EventDetail() {
         .then((response) => {
           if (response.status === 200 && response.data != null) {
             setEventObject(response.data);
+            setComments(response.data.comments.reverse());
           }
         });
     }
+  };
+
+  const addComment = (newComment) => {
+    setComments([newComment, ...comments]);
   };
 
   return (
@@ -67,15 +72,8 @@ function EventDetail() {
         <a href={eventObject.link}>Website Link</a>
       </div>
 
-      {/* <div className="all-comments">
-        <CommentsView commentsArray={eventObject.comments} />
-      </div> */}
-
-      {/* <CommentAdd
-        detailsObj={{ ...writerObject }}
-        reloadComments={loadComments}
-      /> */}
-      {/* {!allowComments && <p>Login to comment</p>} */}
+      <CommentsList commentsArray={comments} />
+      <CommentAdd detailsObj={{ eventObject }} handleAdd={addComment} />
 
       <button onClick={onGoBack} className="button-orange" role="submit">
         Go Back
