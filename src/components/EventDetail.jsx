@@ -4,9 +4,11 @@ import axios from "axios";
 import "../css/eventDetail.scss";
 import CommentsList from "./CommentsList";
 import CommentAdd from "./CommentAdd";
+import { IoLocationSharp } from "react-icons/io5";
+import { FiThumbsUp } from "react-icons/fi";
+import { BiCommentDetail, BiLink } from "react-icons/bi";
 
 import NoImage from "./NoImage";
-// import { debugObj } from "../js/shared.js";
 
 function EventDetail() {
   let navigate = useNavigate();
@@ -58,10 +60,20 @@ function EventDetail() {
       </div>
       <div className="flex items-center gap-10">
         <div className="event-category">{eventObject.category}</div>
-        <div className="event-location">{eventObject.location}</div>
+        <div className="event-location">
+          <IoLocationSharp color="teal" />
+          {eventObject.location}
+        </div>
       </div>
       <div className="flex items-center gap-10">
         <div className="event-date">{eventObject.date}</div>
+        <div className="event-comments">
+          <BiCommentDetail />({comments.length})
+        </div>
+        <div className="event-likes">
+          <FiThumbsUp />
+          (12)
+        </div>
       </div>
       <div className="event-host">Organizer: {eventObject.host}</div>
       <div className="event-description">
@@ -69,7 +81,10 @@ function EventDetail() {
       </div>
 
       <div className="event-link">
-        <a href={eventObject.link}>Website Link</a>
+        <a href={eventObject.link}>
+          <BiLink />
+          Website Link
+        </a>
       </div>
 
       <CommentsList commentsArray={comments} />
