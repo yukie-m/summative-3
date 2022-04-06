@@ -56,13 +56,19 @@ function DeleteSingleEvent(props) {
       <header>
         <h2>{props.detailsObj.title}</h2>
       </header>
-      {props.detailsObj.thumb ? (
+      {/* {props.detailsObj.thumb ? (
         <img src={`./images/${props.detailsObj.thumb}`} />
       ) : (
         <img src="./images/noPhoto.png" />
-      )}
+      )} */}
       <div>
-        <p>{props.detailsObj.bedrooms}</p>
+        <p>Listed:</p>
+        {props.detailsObj.createdAt ? (
+          <p>{new Date(props.detailsObj.createdAt).toDateString()}</p>
+        ) : (
+          <p></p>
+        )}
+
         <p>{props.detailsObj.accommodates}</p>
         <p>{props.detailsObj.property_type}</p>
         <p>{props.detailsObj.day_price}</p>

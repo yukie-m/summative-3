@@ -65,6 +65,10 @@ function CreateEvent() {
     setIsOpen(false);
   }
 
+  function updateCategory(selectedOption) {
+    console.log(selectedOption.value);
+  }
+
   const onSubmit = (event) => {
     event.preventDefault();
 
@@ -123,12 +127,12 @@ function CreateEvent() {
             <label>
               <span>Category</span>
               <Select
-                ref={categoryInputRef}
                 options={categoryOptions}
                 placeholder="select"
                 name="category_name"
                 className="hide-default"
                 components={{ DropdownIndicator }}
+                onChange={updateCategory}
                 required
               ></Select>
             </label>
