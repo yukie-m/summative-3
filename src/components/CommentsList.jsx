@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import CommentItem from "./CommentItem";
 
 function CommentsList({ commentsArray }) {
@@ -8,11 +9,27 @@ function CommentsList({ commentsArray }) {
 
   return (
     <div className="comments-list">
-      {commentsArray.map((comment, index) => (
-        <CommentItem key={index} comment={comment} />
-      ))}
+      <AnimatePresence>
+        {commentsArray.map((comment, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <CommentItem key={index} comment={comment} />
+          </motion.div>
+        ))}
+      </AnimatePresence>
     </div>
   );
+  // return (
+  //   <div className="comments-list">
+  //     {commentsArray.map((comment, index) => (
+  //       <CommentItem key={index} comment={comment} />
+  //     ))}
+  //   </div>
+  // );
 }
 
 export default CommentsList;
