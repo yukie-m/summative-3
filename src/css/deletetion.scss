@@ -33,10 +33,19 @@
     }
   }
 }
+.single-event {
+  margin: 0 auto;
+  width: 90%;
+}
 .event-wrapper {
-  margin: 1.5rem;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 6rem;
+  border-bottom: 1px solid colors.$light-gray;
+  margin-bottom: 1rem;
   h4 {
+    margin: 0;
     margin-bottom: 0.5rem;
   }
 
@@ -45,7 +54,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid colors.$light-gray;
 
     .flex-row {
       display: flex;
@@ -55,7 +63,7 @@
       margin-bottom: 0.3rem;
       span,
       p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
       }
     }
     .icons {
@@ -73,4 +81,8 @@
       color: colors.$dark-gray;
     }
   }
+}
+.check-deleted p {
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
 }

@@ -41,7 +41,7 @@ function DeleteEventList() {
           <h1>Your Events</h1>
         </div>
       </div>
-      <div>
+      <div className="single-event">
         {events.map((item, index) => (
           <DeleteSingleEvent
             detailsObj={{ ...item }}
