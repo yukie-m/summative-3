@@ -1,6 +1,10 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import { AiOutlineComment } from "react-icons/ai";
+import { FiThumbsUp } from "react-icons/fi";
+import "../css/deletetion.scss";
+
 import NoImage from "./NoImage";
 
 function DeleteSingleEvent(props) {
@@ -34,54 +38,67 @@ function DeleteSingleEvent(props) {
   };
 
   return (
-    <div className="card">
-      {showPopup && (
-        <dialog className="delete-popup" open>
-          <p>Are you sure to delete?</p>
-          <button
-            id="confirmBtn"
-            value="default"
-            onClick={() => {
-              onDeleteEvent(props.detailsObj._id);
-            }}
-          >
-            Delete
-          </button>
-          <button value="cancel" onClick={cancelDeletion}>
-            Cancel
-          </button>
-        </dialog>
-      )}
-
-      <header>
-        <h2>{props.detailsObj.title}</h2>
-      </header>
-      {/* {props.detailsObj.thumb ? (
+    <>
+      <div className="card">
+        {showPopup && (
+          <dialog className="delete-popup" open>
+            <p>Are you sure to delete?</p>
+            <button
+              id="confirmBtn"
+              value="default"
+              onClick={() => {
+                onDeleteEvent(props.detailsObj._id);
+              }}
+            >
+              Delete
+            </button>
+            <button value="cancel" onClick={cancelDeletion}>
+              Cancel
+            </button>
+          </dialog>
+        )}
+        <div className="event-wrapper">
+          <header>
+            <h4>{props.detailsObj.title}</h4>
+          </header>
+          {/* {props.detailsObj.thumb ? (
         <img src={`./images/${props.detailsObj.thumb}`} />
       ) : (
         <img src="./images/noPhoto.png" />
       )} */}
-      <div>
-        <p>Listed:</p>
-        {props.detailsObj.createdAt ? (
-          <p>{new Date(props.detailsObj.createdAt).toDateString()}</p>
-        ) : (
-          <p></p>
-        )}
-
-        <p>{props.detailsObj.accommodates}</p>
-        <p>{props.detailsObj.property_type}</p>
-        <p>{props.detailsObj.day_price}</p>
-        <button
-          href=""
-          onClick={() => {
-            setShowPopup(true);
-          }}
-        >
-          Delete
-        </button>
+          <div className="second-row">
+            <div className="listed-date">
+              <span>Listed:</span>
+              <p>{new Date(props.detailsObj.createdAt).toDateString()}</p>
+            </div>
+            <div className="icons flex-row">
+              <div className="comment-icon flex-row">
+                <AiOutlineComment size={22} />
+                <p>(12)</p>
+              </div>
+              <div className="thumb-icon flex-row">
+                <FiThumbsUp size={22} />
+                <p>(12)</p>
+              </div>
+            </div>
+            <div className="delete-edit flex-row">
+              <button
+                href=""
+                onClick={() => {
+                  setShowPopup(true);
+                }}
+              >
+                <p>Delete</p>
+              </button>
+              <p>/</p>
+              <button>
+                <p>Edit</p>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

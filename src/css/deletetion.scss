@@ -1,0 +1,51 @@
+@use "colors";
+.wrapper {
+  h1 {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+}
+
+// DeleteSingleEvent.jsx
+.event-wrapper {
+  margin: 1.5rem;
+
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  .second-row {
+    color: colors.$dark-gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid colors.$light-gray;
+
+    .flex-row {
+      display: flex;
+      align-items: center;
+    }
+    .listed-date {
+      margin-bottom: 0.3rem;
+      span,
+      p {
+        font-size: 0.8rem;
+      }
+    }
+    .icons {
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+    }
+    button {
+      border: none;
+      background-color: white;
+      color: colors.$dark-gray;
+    }
+  }
+}
