@@ -1,0 +1,88 @@
+@use "colors";
+.wrapper {
+  h1 {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+}
+
+// DeleteSingleEvent.jsx
+.card {
+  .delete-popup {
+    .dialog-wrapper {
+      margin: 1rem;
+
+      .btn {
+        display: flex;
+        justify-content: space-around;
+
+        button {
+          border: none;
+          background-color: white;
+          padding: 1rem;
+          border-radius: 5px;
+        }
+        .delete-btn {
+          border: 1.5px solid colors.$red;
+        }
+        .cancel-btn {
+          border: 1.5px solid colors.$navy;
+        }
+      }
+    }
+  }
+}
+.single-event {
+  margin: 0 auto;
+  width: 90%;
+}
+.event-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 6rem;
+  border-bottom: 1px solid colors.$light-gray;
+  margin-bottom: 1rem;
+  h4 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .second-row {
+    color: colors.$dark-gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .flex-row {
+      display: flex;
+      align-items: center;
+    }
+    .listed-date {
+      margin-bottom: 0.3rem;
+      span,
+      p {
+        font-size: 0.9rem;
+      }
+    }
+    .icons {
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+    }
+    button {
+      border: none;
+      background-color: white;
+      color: colors.$dark-gray;
+    }
+  }
+}
+.check-deleted p {
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
+}
