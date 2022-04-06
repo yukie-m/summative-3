@@ -8,6 +8,31 @@
 }
 
 // DeleteSingleEvent.jsx
+.card {
+  .delete-popup {
+    .dialog-wrapper {
+      margin: 1rem;
+
+      .btn {
+        display: flex;
+        justify-content: space-around;
+
+        button {
+          border: none;
+          background-color: white;
+          padding: 1rem;
+          border-radius: 5px;
+        }
+        .delete-btn {
+          border: 1.5px solid colors.$red;
+        }
+        .cancel-btn {
+          border: 1.5px solid colors.$navy;
+        }
+      }
+    }
+  }
+}
 .event-wrapper {
   margin: 1.5rem;
 

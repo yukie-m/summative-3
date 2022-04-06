@@ -42,19 +42,28 @@ function DeleteSingleEvent(props) {
       <div className="card">
         {showPopup && (
           <dialog className="delete-popup" open>
-            <p>Are you sure to delete?</p>
-            <button
-              id="confirmBtn"
-              value="default"
-              onClick={() => {
-                onDeleteEvent(props.detailsObj._id);
-              }}
-            >
-              Delete
-            </button>
-            <button value="cancel" onClick={cancelDeletion}>
-              Cancel
-            </button>
+            <div className="dialog-wrapper">
+              <p>Are you sure to delete?</p>
+              <div className="btn">
+                <button
+                  id="confirmBtn"
+                  value="default"
+                  onClick={() => {
+                    onDeleteEvent(props.detailsObj._id);
+                  }}
+                  className="delete-btn"
+                >
+                  Delete
+                </button>
+                <button
+                  value="cancel"
+                  onClick={cancelDeletion}
+                  className="cancel-btn"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
           </dialog>
         )}
         <div className="event-wrapper">
