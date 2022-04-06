@@ -23,13 +23,6 @@ function CommentsList({ commentsArray }) {
       </AnimatePresence>
     </div>
   );
-  // return (
-  //   <div className="comments-list">
-  //     {commentsArray.map((comment, index) => (
-  //       <CommentItem key={index} comment={comment} />
-  //     ))}
-  //   </div>
-  // );
 }
 
 export default CommentsList;
