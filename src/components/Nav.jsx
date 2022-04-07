@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/nav.scss";
+import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
 import { IoCreateSharp } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
@@ -11,7 +11,7 @@ import { AiOutlineHistory } from "react-icons/ai";
 import { AiFillSetting } from "react-icons/ai";
 import { MdLogout } from "react-icons/md";
 import { TiLocationArrow } from "react-icons/ti";
-import Modal from "react-modal";
+import "../css/nav.scss";
 
 function Nav() {
   const navigate = useNavigate();
@@ -58,26 +58,29 @@ function Nav() {
 
       <div className="search-section">
         <div className="search-by-words">
-              <input type="text" placeholder="Search by category, event name, keywords…"/>
-              <AiOutlineSearch className="icon"/>
+          <input
+            type="text"
+            placeholder="Search by category, event name, keywords…"
+          />
+          <AiOutlineSearch className="icon" />
         </div>
 
         <div className="search-by-location">
-          <input type="text" placeholder="Enter the location"/>
-          <TiLocationArrow className="icon"/>
+          <input type="text" placeholder="Enter the location" />
+          <TiLocationArrow className="icon" />
         </div>
       </div>
 
       <div className="category-slider">
-              <ul className="slider-items">
-                <li>Business</li>
-                <li>Finance</li>
-                <li>Health</li>
-                <li>Technology</li>
-                <li>Life</li>
-                <li>Education</li>
-                <li>International</li>
-              </ul>
+        <ul className="slider-items">
+          <li>Business</li>
+          <li>Finance</li>
+          <li>Health</li>
+          <li>Technology</li>
+          <li>Life</li>
+          <li>Education</li>
+          <li>International</li>
+        </ul>
       </div>
 
       <Modal
@@ -101,7 +104,7 @@ function Nav() {
             bottom: "0",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            // justifyContent: "center",
             alignItems: "center",
             borderLeft: "1px solid #d9d9d9",
             background: "#fff",
@@ -114,8 +117,8 @@ function Nav() {
         }}
       >
         <div className="modal-account">
-          <div>
-            <div>
+          <div className="user-account">
+            <div className="close-modal">
               <IoCloseOutline
                 size={30}
                 className="icon"
@@ -125,50 +128,50 @@ function Nav() {
               />
             </div>
             <div>
-              <MdAccountCircle size={60} className="account-icon" />
+              <MdAccountCircle size={90} className="account-icon" />
               <h5>Username</h5>
-              <hr />
             </div>
           </div>
+          <div className="list-wrapper">
+            <div
+              className="row"
+              onClick={() => {
+                navigate("/create-event");
+              }}
+            >
+              <IoCreateSharp size={30} className="icon" />
+              <h5>Create Event</h5>
+            </div>
 
-          <div
-            className="row"
-            onClick={() => {
-              navigate("/create-event");
-            }}
-          >
-            <IoCreateSharp size={30} className="icon" />
-            <h5>Create Event</h5>
-          </div>
+            <div
+              className="row"
+              onClick={() => {
+                navigate("/delete-event");
+              }}
+            >
+              <AiOutlineUnorderedList size={30} className="icon" />
+              <h5>Your Events</h5>
+            </div>
 
-          <div
-            className="row"
-            onClick={() => {
-              navigate("/delete-event");
-            }}
-          >
-            <AiOutlineUnorderedList size={30} className="icon" />
-            <h5>Your Events</h5>
-          </div>
+            <div className="row">
+              <IoBookmarkOutline size={30} className="icon" />
+              <h5>Bookmark</h5>
+            </div>
 
-          <div className="row">
-            <IoBookmarkOutline size={30} className="icon" />
-            <h5>Bookmark</h5>
-          </div>
+            <div className="row">
+              <AiOutlineHistory size={30} className="icon" />
+              <h5>History</h5>
+            </div>
 
-          <div className="row">
-            <AiOutlineHistory size={30} className="icon" />
-            <h5>History</h5>
-          </div>
+            <div className="row">
+              <AiFillSetting size={30} className="icon" />
+              <h5>Settings</h5>
+            </div>
 
-          <div className="row">
-            <AiFillSetting size={30} className="icon" />
-            <h5>Settings</h5>
-          </div>
-
-          <div className="row">
-            <MdLogout size={30} className="icon" />
-            <h5>Log out</h5>
+            <div className="row">
+              <MdLogout size={30} className="icon" />
+              <h5>Log out</h5>
+            </div>
           </div>
         </div>
       </Modal>

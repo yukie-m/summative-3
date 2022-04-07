@@ -8,13 +8,6 @@ function Home() {
   return (
     <div>
       <Nav />
-      <div
-        onClick={() => {
-          navigate("/delete-event");
-        }}
-      >
-        <p>Delete Event</p>
-      </div>
       <EventsList />
     </div>
   );
