@@ -3,10 +3,11 @@
 .nav-wrapper {
   display: flex;
   overflow: hidden;
-  width: 100%;
+  width: 95%;
+  margin: auto;
 
   .nav-logo {
-    width: 50%;
+    width: 70%;
     display: flex;
     align-items: center;
     img {
@@ -24,5 +25,75 @@
       margin: 0 0.5rem;
       color: colors.$dark-gray;
     }
+  }
+}
+
+.search-section {
+  width: 90%;
+  margin: auto;
+
+  .search-by-words {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    input {
+      width: 85%;
+      height: 20px;
+      padding: 6px;
+      padding-left: 10px;
+      background-color: colors.$light-gray;
+      border: none;
+      border-radius: 5px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .icon {
+      font-size: 27px;
+      color: colors.$dark-gray;
+    }
+  }
+
+  .search-by-location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    
+    input {
+      width: 87%;
+      border: transparent;
+      border-bottom: 1px solid colors.$light-gray;
+      padding: 5px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .icon {
+      font-size: 23px;
+      color: colors.$dark-gray;
+      transform: translateX(-15px);
+    }
+  }
+}
+
+.category-slider {
+  width: 90%;
+  margin: auto;
+
+  .slider-items {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    overflow: scroll;
+    padding-left: 0px;
+    font-weight: 600;
+    font-size: 15px;
   }
 }
