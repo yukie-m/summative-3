@@ -15,7 +15,7 @@ function EventsList() {
     });
   }, []);
   return (
-    <div>
+    <div className="event-list-container">
       {listings.map((item, index) => (
         <EventSingle detailsObj={{ ...item }} key={index} />
       ))}

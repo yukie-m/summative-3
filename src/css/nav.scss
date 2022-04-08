@@ -1,4 +1,5 @@
 @use "colors";
+@use "./font";
 
 .nav-wrapper {
   display: flex;
@@ -31,6 +32,7 @@
 .search-section {
   width: 90%;
   margin: auto;
+  font-family: font.$text;
 
   .search-by-words {
     width: 100%;
@@ -90,11 +92,12 @@
   .slider-items {
     list-style-type: none;
     display: flex;
-    gap: 25px;
+    gap: 26px;
     overflow: scroll;
     padding-left: 0px;
     font-weight: 600;
     font-size: 15px;
+    font-family: font.$text;
   }
 }
 

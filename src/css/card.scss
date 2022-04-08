@@ -1,62 +1,87 @@
 @use "./colors";
+@use "./font";
 
 .no-image img {
   width: 50%;
 }
 
 .event-card {
-  margin: 0.5rem;
-  margin-bottom: 1.5rem;
+  width: 100%;
   display: flex;
-  font-size: small;
-  gap: 10px;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid colors.$light-gray;
+  padding-bottom: 10px;
+  font-family: font.$text;
 
   .event-thumbnail {
-    width: 50%;
-    display: flex;
-    justify-content: center;
+    width: 40%;
 
     img {
-      width: 174px;
+      width: 100%;
       height: 115px;
-      border-radius: 10px;
       object-fit: cover;
     }
   }
 
-  .event-name {
-    margin: 0;
-    font-size: 16px;
-  }
-
   .event-details {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
+    width: 55%;
 
-  .event-category {
-    border: 1px colors.$dark-gray solid;
-    border-radius: 5px;
-    color: colors.$dark-gray;
-    width: min-content;
-    padding: 2px 4px;
-  }
+    .event-name {
+      margin: 0;
+      font-size: 15px;
+      margin-bottom: 5px;
+      font-family: font.$sub-heading;
+    }
 
-  .event-date {
-    font-size: small;
-  }
+    .event-category {
+      border: 1px colors.$dark-gray solid;
+      border-radius: 5px;
+      color: colors.$dark-gray;
+      width: min-content;
+      padding: 2px 4px;
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
 
-  .event-location {
-    font-size: small;
-  }
+    .date-location {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 5px;
 
-  .event-comments {
-    font-size: small;
-  }
+      .event-date {
+        font-size: small;
+      }
+    
+      .event-location {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
 
-  .event-likes {
-    font-size: small;
+        .location-icon {
+          color: colors.$navy;
+        }
+      }
+    }
+
+    .flex {
+      display: flex;
+      width: 50%;
+      
+      .event-comments {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+      }
+    
+      .event-likes {
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+      }
+    }
   }
 }

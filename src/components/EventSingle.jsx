@@ -32,16 +32,19 @@ function EventSingle({ detailsObj }) {
       <div className="event-details">
         <h2 className="event-name">{detailsObj.title} </h2>
         <div className="event-category">{detailsObj.category}</div>
+        <div className="date-location">
         <div className="event-date">
           {detailsObj.date ? detailsObj.date : <p>TBD</p>}
         </div>
         <div className="event-location">
-          <IoLocationSharp color="teal" />
+          <IoLocationSharp className="location-icon"/>
           {detailsObj.location}
+        </div>
         </div>
         <div className="flex space-between">
           <div className="event-comments">
-            <BiCommentDetail />({detailsObj.comments.length})
+            <BiCommentDetail />
+            ({detailsObj.comments.length})
           </div>
           <div className="event-likes">
             <FiThumbsUp />
