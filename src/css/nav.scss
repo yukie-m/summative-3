@@ -130,8 +130,9 @@
     }
   }
   .close-modal {
-    width: 90%;
-    text-align: right;
+    margin-left: auto;
+    margin-top: 15px;
+    color: colors.$dark-gray;
   }
   .list-wrapper {
     width: 90%;
