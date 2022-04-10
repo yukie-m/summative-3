@@ -7,6 +7,7 @@ import EventSingle from "./components/EventSingle";
 import EventDetail from "./components/EventDetail";
 import CreateEvent from "./components/CreateEvent";
 import DeleteEventList from "./components/DeleteEventList";
+import ViewByCategory from "./components/ViewByCategory";
 
 function App() {
   useEffect(() => {
@@ -18,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/view-events" element={<EventsList />} />
-        {/* <Route path='/view-by-gender' element={<WritersByGender />} /> */}
+        <Route path="/view-by-category" element={<ViewByCategory />} />
 
         <Route path="/listing" element={<EventSingle />} />
         <Route path="/event-detail" element={<EventDetail />} />

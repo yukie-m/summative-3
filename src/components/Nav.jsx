@@ -1,6 +1,8 @@
 import React from "react";
 import Modal from "react-modal";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { IoCreateSharp } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -73,13 +75,27 @@ function Nav() {
 
       <div className="category-slider">
         <ul className="slider-items">
-          <li>Business</li>
-          <li>Finance</li>
-          <li>Health</li>
-          <li>Technology</li>
-          <li>Life</li>
-          <li>Education</li>
-          <li>International</li>
+          <li id="business" value="Business">
+            Business
+          </li>
+          <li id="finance" value="Finance">
+            Finance
+          </li>
+          <li id="health" value="Health">
+            Health
+          </li>
+          <li id="technology" value="Technology">
+            Technology
+          </li>
+          <li id="life" value="Life">
+            Life
+          </li>
+          <li id="education" value="Education">
+            Education
+          </li>
+          <li id="international" value="International">
+            International
+          </li>
         </ul>
       </div>
 
