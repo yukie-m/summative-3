@@ -17,9 +17,17 @@ import "../css/nav.scss";
 
 function Nav() {
   const navigate = useNavigate();
+  const [userChoice, setUserChoice] = useState("all");
 
-  const onGoBack = (event) => {
-    navigate(-1);
+  const onListingTypeSelect = (event) => {
+    setUserChoice(event.target.value);
+  };
+  const onStartSearch = (event) => {
+    if (userChoice === "all") {
+      navigate("/");
+    } else {
+      navigate("/view-by-category", { state: userChoice });
+    }
   };
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -75,28 +83,66 @@ function Nav() {
 
       <div className="category-slider">
         <ul className="slider-items">
-          <li id="business" value="Business">
-            Business
-          </li>
-          <li id="finance" value="Finance">
-            Finance
-          </li>
-          <li id="health" value="Health">
-            Health
-          </li>
-          <li id="technology" value="Technology">
-            Technology
-          </li>
-          <li id="life" value="Life">
-            Life
-          </li>
-          <li id="education" value="Education">
-            Education
-          </li>
-          <li id="international" value="International">
-            International
-          </li>
+          <input
+            type="radio"
+            id="all"
+            name="listing_type"
+            onChange={onListingTypeSelect}
+            value="all"
+          />
+          <label htmlFor="All">All</label>
+          <input
+            type="radio"
+            id="finance"
+            name="listing_type"
+            onChange={onListingTypeSelect}
+            value="Finance"
+          />
+          <label htmlFor="Finance">Finance</label>
+          <input
+            type="radio"
+            id="business"
+            name="listing_type"
+            onChange={onListingTypeSelect}
+            value="Business"
+          />
+          <label htmlFor="Business">Business</label>
+          <input
+            type="radio"
+            id="health"
+            name="listing_type"
+            onChange={onListingTypeSelect}
+            value="Health"
+          />
+          <label htmlFor="Finance">Health</label>
+          <input
+            type="radio"
+            id="it"
+            name="listing_type"
+            onChange={onListingTypeSelect}
+            value="IT"
+          />
+          <label htmlFor="Finance">IT</label>
+          <input
+            type="radio"
+            id="education"
+            name="listing_type"
+            onChange={onListingTypeSelect}
+            value="Education"
+          />
+          <label htmlFor="Finance">Education</label>
+          <input
+            type="radio"
+            id="international"
+            name="listing_type"
+            onChange={onListingTypeSelect}
+            value="International"
+          />
+          <label htmlFor="Finance">International</label>
         </ul>
+        <button onClick={onStartSearch} className="button-orange" role="button">
+          Search
+        </button>
       </div>
 
       <Modal
