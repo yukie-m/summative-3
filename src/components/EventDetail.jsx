@@ -6,7 +6,10 @@ import CommentsList from "./CommentsList";
 import CommentAdd from "./CommentAdd";
 import { IoLocationSharp } from "react-icons/io5";
 import { FiThumbsUp } from "react-icons/fi";
-import { BiCommentDetail, BiLink } from "react-icons/bi";
+import { BiLink } from "react-icons/bi";
+import { AiOutlineComment } from "react-icons/ai";
+import { BsShareFill } from "react-icons/bs";
+import { MdArrowBack } from "react-icons/md";
 
 import NoImage from "./NoImage";
 
@@ -46,53 +49,62 @@ function EventDetail() {
   };
 
   return (
-    <div className="detail-wrapper">
-      <div>
-        {eventObject.thumb ? (
-          <img className="event-image" src={`./images/${eventObject.thumb}`} />
-        ) : (
-          <img src="./images/noPhoto.png" />
-        )}
+    <div>
+      <div onClick={onGoBack} className="button-orange" role="submit">
+        <MdArrowBack className="back-arrow" />
       </div>
-
-      <div className="title">
-        <h2> {eventObject.title}</h2>
-      </div>
-      <div className="flex items-center gap-10">
-        <div className="event-category">{eventObject.category}</div>
-        <div className="event-location">
-          <IoLocationSharp color="teal" />
-          {eventObject.location}
+      <div className="detail-wrapper">
+        <div>
+          {eventObject.thumb ? (
+            <img
+              className="event-image"
+              src={`./images/${eventObject.thumb}`}
+            />
+          ) : (
+            <img src="./images/noPhoto.png" />
+          )}
         </div>
-      </div>
-      <div className="flex items-center gap-10">
-        <div className="event-date">{eventObject.date}</div>
-        <div className="event-comments">
-          <BiCommentDetail />({comments.length})
+
+        <div className="title">
+          <h3> {eventObject.title}</h3>
         </div>
-        <div className="event-likes">
-          <FiThumbsUp />
-          (12)
+        <div className="flex items-center gap-10">
+          <div className="event-category">{eventObject.category}</div>
+          <div className="event-location">
+            <IoLocationSharp className="event-location-icon" />
+            {eventObject.location}
+          </div>
         </div>
-      </div>
-      <div className="event-host">Organizer: {eventObject.host}</div>
-      <div className="event-description">
-        <p>{eventObject.description}</p>
-      </div>
+        <div className="flex items-center gap-10">
+          <div className="event-date">{eventObject.date}</div>
+          <div className="event-comments">
+            <AiOutlineComment size={18} />({comments.length})
+          </div>
+          <div className="event-likes">
+            <FiThumbsUp size={17} />
+            (12)
+          </div>
+          <div className="event-share">
+            <BsShareFill size={14} />
+          </div>
+        </div>
+        <div className="event-host">Organizer: {eventObject.host}</div>
+        <div className="event-description">
+          <p>{eventObject.description}</p>
+        </div>
 
-      <div className="event-link">
-        <a href={eventObject.link}>
-          <BiLink />
-          Website Link
-        </a>
+        <div className="event-link">
+          <a href={eventObject.link}>
+            <BiLink />
+            Website Link
+          </a>
+        </div>
+
+        <div className="border-bottom"></div>
+
+        <CommentsList commentsArray={comments} />
+        <CommentAdd detailsObj={{ eventObject }} handleAdd={addComment} />
       </div>
-
-      <CommentsList commentsArray={comments} />
-      <CommentAdd detailsObj={{ eventObject }} handleAdd={addComment} />
-
-      <button onClick={onGoBack} className="button-orange" role="submit">
-        Go Back
-      </button>
     </div>
   );
 }

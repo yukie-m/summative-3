@@ -1,10 +1,14 @@
 @use "./colors";
+@use "./font";
 
 .detail-wrapper {
   display: flex;
   flex-direction: column;
   gap: 5px;
-
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  
   .no-image img {
     width: 50%;
   }
@@ -12,11 +16,31 @@
   img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
   }
 
   .title {
     margin: 0;
+    font-family: font.$sub-heading;
+  }
+
+  .items-center  {
+    font-family: font.$sub-heading;
+    color: colors.$dark-gray;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+   
+    .event-location {
+      display: flex;
+      align-items: center;
+      color: colors.$dark-gray;
+      font-size: 15px;
+
+      .event-location-icon {
+        color: colors.$navy;
+        font-size: 18px;
+      }
+    }
   }
 
   .event-details {
@@ -42,11 +66,23 @@
     font-size: small;
   }
 
-  .event-comments {
-    font-size: small;
+  .event-comments, .event-likes {
+    display: flex;
+    align-items: center;
   }
 
-  .event-likes {
-    font-size: small;
+  .event-host {
+    font-family: font.$sub-heading;
+    color: colors.$dark-gray;
+  }
+
+  .event-description {
+    font-family: font.$sub-heading;
+    line-height: 23px;
+  }
+
+  .border-bottom {
+    margin-top: 15px;
+    border-bottom: 3px solid colors.$light-gray;
   }
 }

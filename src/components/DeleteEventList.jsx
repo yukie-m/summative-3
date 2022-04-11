@@ -34,7 +34,7 @@ function DeleteEventList() {
       <div className="wrapper">
         <div className="button">
           <button onClick={onGoBack} className="left-arrow" role="submit">
-            <MdArrowBack />
+            <MdArrowBack className="back-arrow"/>
           </button>
         </div>
         <div className="header-text">

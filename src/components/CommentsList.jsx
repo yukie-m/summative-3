@@ -2,6 +2,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CommentItem from "./CommentItem";
 
+
 function CommentsList({ commentsArray }) {
   if (!commentsArray || commentsArray.length === 0) {
     return <p>No Comments Yet</p>;
