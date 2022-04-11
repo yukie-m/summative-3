@@ -47,7 +47,7 @@ function EventSingle({ detailsObj }) {
           </div>
           <div className="event-likes">
             <FiThumbsUp />
-            (12)
+            ({detailsObj.likes})
           </div>
         </div>
       </div>
