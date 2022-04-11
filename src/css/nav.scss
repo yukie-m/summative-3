@@ -24,7 +24,7 @@
 
     .icon {
       margin: 0 0.5rem;
-      color: colors.$dark-gray;
+      color: colors.$dark-grey;
     }
   }
 }
@@ -46,7 +46,7 @@
       height: 20px;
       padding: 6px;
       padding-left: 10px;
-      background-color: colors.$light-gray;
+      background-color: colors.$light-grey;
       border: none;
       border-radius: 5px;
 
@@ -57,7 +57,7 @@
 
     .icon {
       font-size: 27px;
-      color: colors.$dark-gray;
+      color: colors.$dark-grey;
     }
   }
 
@@ -69,7 +69,7 @@
     input {
       width: 87%;
       border: transparent;
-      border-bottom: 1px solid colors.$light-gray;
+      border-bottom: 1px solid colors.$light-grey;
       padding: 5px;
 
       &:focus {
@@ -79,7 +79,7 @@
 
     .icon {
       font-size: 23px;
-      color: colors.$dark-gray;
+      color: colors.$dark-grey;
       transform: translateX(-15px);
     }
   }
@@ -116,11 +116,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid colors.$light-gray;
+    border-bottom: 1px solid colors.$light-grey;
     margin-bottom: 1rem;
 
     .account-icon {
-      color: colors.$dark-gray;
+      color: colors.$dark-grey;
     }
 
     h5 {
@@ -132,7 +132,7 @@
   .close-modal {
     margin-left: auto;
     margin-top: 15px;
-    color: colors.$dark-gray;
+    color: colors.$dark-grey;
   }
   .list-wrapper {
     width: 90%;

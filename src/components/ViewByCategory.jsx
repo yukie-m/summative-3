@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "../css/listings.scss";
 import EventSingle from "./EventSingle";
-import Home from "../pages/Home";
+import Nav from "./Nav";
 
 function ViewByCategory() {
   let location = useLocation();
@@ -17,16 +17,21 @@ function ViewByCategory() {
       .then((response) => {
         if (response.status == 200 && response.data.length > 0) {
           setListings(response.data);
+          console.log(response.data);
         }
       });
-  }, []);
+  }, [location.state]);
 
   return (
-    <div>
-      {listings.map((item, index) => (
-        <EventSingle detailsObj={{ ...item }} key={index} />
-      ))}
-    </div>
+    <>
+      <div>
+        <Nav />
+        <h3> {location.state}</h3>
+        {listings.map((item, index) => (
+          <EventSingle detailsObj={{ ...item }} key={index} />
+        ))}
+      </div>
+    </>
   );
 }
 

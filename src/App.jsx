@@ -8,6 +8,7 @@ import EventDetail from "./components/EventDetail";
 import CreateEvent from "./components/CreateEvent";
 import DeleteEventList from "./components/DeleteEventList";
 import ViewByCategory from "./components/ViewByCategory";
+import SignUp from "./components/SignUp";
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/event-detail" element={<EventDetail />} />
         <Route path="/create-event" element={<CreateEvent />} />
         <Route path="/delete-event" element={<DeleteEventList />} />
+        <Route path="/sign-up" element={<SignUp />} />
         {/* <Route path='/logged-out' element={<LoggedOut />} /> */}
       </Routes>
     </div>

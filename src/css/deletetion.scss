@@ -50,7 +50,7 @@
   flex-direction: column;
   justify-content: center;
   height: 6rem;
-  border-bottom: 1px solid colors.$light-gray;
+  border-bottom: 1px solid colors.$light-grey;
   margin-bottom: 1rem;
   
   h4 {
@@ -60,7 +60,7 @@
   }
 
   .second-row {
-    color: colors.$dark-gray;
+    color: colors.$dark-grey;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -92,7 +92,7 @@
     button {
       border: none;
       background-color: white;
-      color: colors.$dark-gray;
+      color: colors.$dark-grey;
     }
   }
 }
