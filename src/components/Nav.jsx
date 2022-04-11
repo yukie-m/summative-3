@@ -17,7 +17,7 @@ import "../css/nav.scss";
 
 function Nav() {
   const navigate = useNavigate();
-  const [userChoice, setUserChoice] = useState("all");
+  const [userChoice, setUserChoice] = useState("");
 
   const onListingTypeSelect = (event) => {
     setUserChoice(event.target.value);
@@ -109,36 +109,20 @@ function Nav() {
           <label htmlFor="Business">Business</label>
           <input
             type="radio"
-            id="health"
-            name="listing_type"
-            onChange={onListingTypeSelect}
-            value="Health"
-          />
-          <label htmlFor="Finance">Health</label>
-          <input
-            type="radio"
             id="it"
             name="listing_type"
             onChange={onListingTypeSelect}
             value="IT"
           />
-          <label htmlFor="Finance">IT</label>
+          <label htmlFor="IT">IT</label>
           <input
             type="radio"
-            id="education"
+            id="engineer"
             name="listing_type"
             onChange={onListingTypeSelect}
-            value="Education"
+            value="Engineer"
           />
-          <label htmlFor="Finance">Education</label>
-          <input
-            type="radio"
-            id="international"
-            name="listing_type"
-            onChange={onListingTypeSelect}
-            value="International"
-          />
-          <label htmlFor="Finance">International</label>
+          <label htmlFor="Engineer">Engineer</label>
         </ul>
         <button onClick={onStartSearch} className="button-orange" role="button">
           Search

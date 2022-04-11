@@ -11,7 +11,7 @@
   gap: 20px;
   align-items: center;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid colors.$light-gray;
+  border-bottom: 1px solid colors.$light-grey;
   padding-bottom: 10px;
   font-family: font.$text;
 
@@ -36,9 +36,9 @@
     }
 
     .event-category {
-      border: 1px colors.$dark-gray solid;
+      border: 1px colors.$dark-grey solid;
       border-radius: 5px;
-      color: colors.$dark-gray;
+      color: colors.$dark-grey;
       width: min-content;
       padding: 2px 4px;
       margin-bottom: 5px;
@@ -53,7 +53,7 @@
       .event-date {
         font-size: small;
       }
-    
+
       .event-location {
         font-size: 14px;
         display: flex;
@@ -68,14 +68,14 @@
     .flex {
       display: flex;
       width: 50%;
-      
+
       .event-comments {
         font-size: 16px;
         display: flex;
         align-items: center;
         gap: 3px;
       }
-    
+
       .event-likes {
         font-size: 15px;
         display: flex;

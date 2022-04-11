@@ -20,7 +20,7 @@ function ViewByCategory() {
           console.log(response.data);
         }
       });
-  }, []);
+  }, [location.state]);
 
   return (
     <>

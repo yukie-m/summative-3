@@ -9,6 +9,14 @@ function Home() {
   return (
     <div>
       <Nav />
+      <div
+        className="sign-up"
+        onClick={() => {
+          navigate("/sign-up");
+        }}
+      >
+        Sign-up
+      </div>
       <EventsList />
     </div>
   );
