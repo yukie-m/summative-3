@@ -25,7 +25,7 @@
 
   .items-center  {
     font-family: font.$sub-heading;
-    color: colors.$dark-gray;
+    color: colors.$dark-grey;
     margin-bottom: 5px;
     display: flex;
     align-items: center;
@@ -33,8 +33,9 @@
     .event-location {
       display: flex;
       align-items: center;
-      color: colors.$dark-gray;
+      color: colors.$dark-grey;
       font-size: 15px;
+
 
       .event-location-icon {
         color: colors.$navy;
@@ -73,7 +74,7 @@
 
   .event-host {
     font-family: font.$sub-heading;
-    color: colors.$dark-gray;
+    color: colors.$dark-grey;
   }
 
   .event-description {
@@ -83,6 +84,6 @@
 
   .border-bottom {
     margin-top: 15px;
-    border-bottom: 3px solid colors.$light-gray;
+    border-bottom: 3px solid colors.$light-grey;
   }
 }
