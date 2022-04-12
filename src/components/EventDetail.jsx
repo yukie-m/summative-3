@@ -20,6 +20,9 @@ function EventDetail() {
   const [comments, setComments] = useState([]);
   //   console.log(location);
 
+  const [likes, setLikes] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     loadEventDetails();
   }, []);
@@ -42,6 +45,17 @@ function EventDetail() {
           }
         });
     }
+  };
+
+  const updateLikes = (event) => {
+    axios
+      .patch(`//localhost:4000/api/add-like/${eventObject._id}`, {
+        action: "up",
+      })
+      .then((response) => {
+        setLikes(response.data.likes);
+        setTimeout(setLoading(false), 2500);
+      });
   };
 
   const addComment = (newComment) => {
@@ -81,8 +95,12 @@ function EventDetail() {
             <AiOutlineComment size={18} />({comments.length})
           </div>
           <div className="event-likes">
-            <FiThumbsUp size={17} />
-            (12)
+            <FiThumbsUp
+              size={17}
+              onClick={updateLikes}
+              // className={`${loading ? "animate-heart" : ""}`}
+            />
+            {likes}
           </div>
           <div className="event-share">
             <BsShareFill size={14} />

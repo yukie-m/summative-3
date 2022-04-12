@@ -12,13 +12,12 @@ function SignUp() {
       <div className="wrapper">
         <h1>My Account</h1>
         <div className="signin-wrap">
-          <form onSubmit={onSubmit}>
+          <form>
             <label>
               <input
                 type="text"
                 defaultValue={"TEST"}
                 placeholder="Username"
-                // ref={usernameInputRef}
                 required
               />
             </label>
@@ -33,7 +32,6 @@ function SignUp() {
                 type="password"
                 placeholder="Password"
                 name="password"
-                // ref={passwordInputRef}
                 required
               />
             </label>
@@ -52,9 +50,9 @@ function SignUp() {
           <div className="line-right"></div>
         </div>
         <div className="icons">
-          <AiFillFacebook size={35} color="#3b5998" className="sns-icon"/>
-          <AiFillLinkedin size={35} color="#0e76a8" className="sns-icon"/>
-          <AiOutlineTwitter size={35} color="#00acee" className="sns-icon"/>
+          <AiFillFacebook size={35} color="#3b5998" className="sns-icon" />
+          <AiFillLinkedin size={35} color="#0e76a8" className="sns-icon" />
+          <AiOutlineTwitter size={35} color="#00acee" className="sns-icon" />
         </div>
         <div className="login-link">
           <p>Already have an account?</p>
