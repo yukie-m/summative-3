@@ -92,12 +92,16 @@
   .slider-items {
     list-style-type: none;
     display: flex;
-    gap: 26px;
+    gap: 55px;
     overflow: scroll;
     padding-left: 0px;
     font-weight: 600;
     font-size: 15px;
     font-family: font.$text;
+
+    input {
+      display: none;
+    }
   }
 }
 
@@ -152,4 +156,11 @@
       color: colors.$navy;
     }
   }
+}
+
+.category-title {
+  font-family: font.$sub-heading;
+  font-size: 20px;
+  text-align: left;
+  margin-left: 10px;
 }

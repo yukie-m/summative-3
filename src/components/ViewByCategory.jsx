@@ -26,10 +26,14 @@ function ViewByCategory() {
     <>
       <div>
         <Nav />
-        <h3> {location.state}</h3>
-        {listings.map((item, index) => (
-          <EventSingle detailsObj={{ ...item }} key={index} />
-        ))}
+        <div>
+          <h3 className="category-title"> {location.state}</h3>
+          <div className="event-list-container">
+            {listings.map((item, index) => (
+              <EventSingle detailsObj={{ ...item }} key={index} />
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

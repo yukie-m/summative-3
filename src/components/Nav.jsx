@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { IoCreateSharp } from "react-icons/io5";
@@ -22,7 +22,15 @@ function Nav() {
   const onListingTypeSelect = (event) => {
     setUserChoice(event.target.value);
   };
-  const onStartSearch = (event) => {
+
+  useEffect(() => {
+    if (userChoice !== "") {
+      onStartSearch();
+    }
+  }, [userChoice]);
+
+  const onStartSearch = () => {
+    console.log(">>>>>> ", userChoice);
     if (userChoice === "all") {
       navigate("/");
     } else {
@@ -90,7 +98,7 @@ function Nav() {
             onChange={onListingTypeSelect}
             value="all"
           />
-          <label htmlFor="All">All</label>
+          <label htmlFor="all">All</label>
           <input
             type="radio"
             id="finance"
@@ -98,7 +106,7 @@ function Nav() {
             onChange={onListingTypeSelect}
             value="Finance"
           />
-          <label htmlFor="Finance">Finance</label>
+          <label htmlFor="finance">Finance</label>
           <input
             type="radio"
             id="business"
@@ -106,7 +114,7 @@ function Nav() {
             onChange={onListingTypeSelect}
             value="Business"
           />
-          <label htmlFor="Business">Business</label>
+          <label htmlFor="business">Business</label>
           <input
             type="radio"
             id="it"
@@ -114,7 +122,7 @@ function Nav() {
             onChange={onListingTypeSelect}
             value="IT"
           />
-          <label htmlFor="IT">IT</label>
+          <label htmlFor="it">IT</label>
           <input
             type="radio"
             id="engineer"
@@ -122,11 +130,8 @@ function Nav() {
             onChange={onListingTypeSelect}
             value="Engineer"
           />
-          <label htmlFor="Engineer">Engineer</label>
+          <label htmlFor="engineer">Engineer</label>
         </ul>
-        <button onClick={onStartSearch} className="button-orange" role="button">
-          Search
-        </button>
       </div>
 
       <Modal
