@@ -47,8 +47,7 @@ function EventSingle({ detailsObj }) {
             <BiCommentDetail />({detailsObj.comments.length})
           </div>
           <div className="event-likes">
-            <FiThumbsUp />
-            ({detailsObj.likes})
+            <FiThumbsUp />({detailsObj.likes})
           </div>
         </div>
       </div>

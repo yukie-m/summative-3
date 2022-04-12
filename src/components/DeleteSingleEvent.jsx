@@ -96,11 +96,11 @@ function DeleteSingleEvent(props) {
             <div className="icons flex-row">
               <div className="comment-icon flex-row">
                 <AiOutlineComment size={18} />
-                <p>(12)</p>
+                <p>{props.detailsObj.comments.length}</p>
               </div>
               <div className="thumb-icon flex-row">
                 <FiThumbsUp size={17} />
-                <p>(12)</p>
+                <p>{props.detailsObj.likes}</p>
               </div>
             </div>
             <div className="delete-edit flex-row">
