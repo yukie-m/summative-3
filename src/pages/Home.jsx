@@ -10,7 +10,6 @@ function Home() {
     <div>
       <Nav />
       <div
-        className="sign-up"
         onClick={() => {
           navigate("/sign-up");
         }}

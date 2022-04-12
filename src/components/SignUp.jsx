@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/signup.scss";
+
 import { AiFillEye } from "react-icons/ai";
 import { AiFillFacebook } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
@@ -11,12 +12,13 @@ function SignUp() {
       <div className="wrapper">
         <h1>My Account</h1>
         <div className="signin-wrap">
-          <form>
+          <form onSubmit={onSubmit}>
             <label>
               <input
                 type="text"
+                defaultValue={"TEST"}
                 placeholder="Username"
-                name="user-name"
+                // ref={usernameInputRef}
                 required
               />
             </label>
@@ -27,7 +29,13 @@ function SignUp() {
               <option value="blue.jpg">blue</option>
             </select>
             <label>
-              <input type="password" placeholder="Password" name="password" />
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                // ref={passwordInputRef}
+                required
+              />
             </label>
             <div className="checkbox">
               <input type="checkbox" />
