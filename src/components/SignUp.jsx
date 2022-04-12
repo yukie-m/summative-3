@@ -47,14 +47,18 @@ function SignUp() {
           </form>
         </div>
         <div className="line">
-          <span></span>
-          or
-          <span></span>
+          <div className="line-left"></div>
+          <p>or</p>
+          <div className="line-right"></div>
         </div>
         <div className="icons">
-          <AiFillFacebook size={30} color="#3b5998" />
-          <AiFillLinkedin size={30} color="#0e76a8" />
-          <AiOutlineTwitter size={30} color="#00acee" />
+          <AiFillFacebook size={35} color="#3b5998" className="sns-icon"/>
+          <AiFillLinkedin size={35} color="#0e76a8" className="sns-icon"/>
+          <AiOutlineTwitter size={35} color="#00acee" className="sns-icon"/>
+        </div>
+        <div className="login-link">
+          <p>Already have an account?</p>
+          <h3>Log in</h3>
         </div>
       </div>
     </>

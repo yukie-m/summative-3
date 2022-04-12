@@ -6,6 +6,7 @@ import { FiThumbsUp } from "react-icons/fi";
 import { BiCommentDetail, BiLink } from "react-icons/bi";
 import NoImage from "./NoImage";
 
+
 function EventSingle({ detailsObj }) {
   const navigate = useNavigate();
 

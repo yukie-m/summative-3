@@ -31,24 +31,22 @@ function DeleteEventList() {
 
   return (
     <>
-      <div className="wrapper">
-        <div className="button">
-          <button onClick={onGoBack} className="left-arrow" role="submit">
-            <MdArrowBack />
-          </button>
-        </div>
+      <button onClick={onGoBack} className="left-arrow" role="submit">
+        <MdArrowBack className="back-arrow" />
+      </button>
+      <div className="list-wrapper">
         <div className="header-text">
           <h1>Your Events</h1>
         </div>
-      </div>
-      <div className="single-event">
-        {events.map((item, index) => (
-          <DeleteSingleEvent
-            detailsObj={{ ...item }}
-            key={index}
-            reloadEvents={reloadEvents}
-          />
-        ))}
+        <div className="single-event">
+          {events.map((item, index) => (
+            <DeleteSingleEvent
+              detailsObj={{ ...item }}
+              key={index}
+              reloadEvents={reloadEvents}
+            />
+          ))}
+        </div>
       </div>
     </>
   );
