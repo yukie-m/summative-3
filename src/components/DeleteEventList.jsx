@@ -31,12 +31,10 @@ function DeleteEventList() {
 
   return (
     <>
-      <div className="wrapper">
-        <div className="button">
-          <button onClick={onGoBack} className="left-arrow" role="submit">
+    <button onClick={onGoBack} className="left-arrow" role="submit">
             <MdArrowBack className="back-arrow"/>
           </button>
-        </div>
+      <div className="wrapper">
         <div className="header-text">
           <h1>Your Events</h1>
         </div>

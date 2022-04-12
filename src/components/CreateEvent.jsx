@@ -91,10 +91,10 @@ function CreateEvent() {
 
   return (
     <>
-      <div className="wrapper">
-        <button onClick={onGoBack} className="left-arrow" role="submit">
+    <button onClick={onGoBack} className="left-arrow" role="submit">
           <MdArrowBack className="back-arrow"/>
         </button>
+      <div className="wrapper">
         <div className="create-listing-wrap">
           <h1>Create Event</h1>
 
