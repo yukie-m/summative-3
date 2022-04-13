@@ -3,9 +3,9 @@ import "../css/card.scss";
 import { useNavigate } from "react-router-dom";
 import { IoLocationSharp } from "react-icons/io5";
 import { FiThumbsUp } from "react-icons/fi";
+import { BiBookmark } from "react-icons/bi";
 import { BiCommentDetail, BiLink } from "react-icons/bi";
 import NoImage from "./NoImage";
-
 
 function EventSingle({ detailsObj }) {
   const navigate = useNavigate();
@@ -15,6 +15,7 @@ function EventSingle({ detailsObj }) {
   } else {
     console.log(">> image == ", detailsObj.thumb);
   }
+
   return (
     <div
       className="event-card"
@@ -23,6 +24,9 @@ function EventSingle({ detailsObj }) {
         navigate("/event-detail", { state: detailsObj._id });
       }}
     >
+      <div className="bookmark">
+        <BiBookmark className="bookmark-icon"/>
+      </div>
       <div className="event-thumbnail">
         {detailsObj.thumb ? (
           <img src={`./images/${detailsObj.thumb}`} />

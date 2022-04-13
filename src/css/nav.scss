@@ -88,12 +88,13 @@
 .category-slider {
   width: 90%;
   margin: auto;
+  overflow: scroll;
 
   .slider-items {
     list-style-type: none;
     display: flex;
     gap: 55px;
-    overflow: scroll;
+    // overflow: scroll;
     padding-left: 0px;
     font-weight: 600;
     font-size: 15px;
@@ -162,5 +163,5 @@
   font-family: font.$sub-heading;
   font-size: 20px;
   text-align: left;
-  margin-left: 10px;
+  margin-left: 20px;
 }

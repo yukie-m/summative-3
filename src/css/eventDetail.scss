@@ -8,6 +8,25 @@
   width: 90%;
   margin: auto;
   margin-top: 10px;
+  position: relative;
+
+  .bookmark {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: rgba($color: #9b9898, $alpha: 0.6);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+
+    .bookmark-icon {
+      font-size: 23px;
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      color: white;
+    }
+  }
   
   .no-image img {
     width: 50%;
@@ -70,6 +89,7 @@
   .event-comments, .event-likes {
     display: flex;
     align-items: center;
+    gap: 7px;
   }
 
   .event-host {
