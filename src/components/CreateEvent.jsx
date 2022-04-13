@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { useLocation, useNavigate } from "react-router-dom";
 import Select, { components } from "react-select";
+import { useSelector } from "react-redux";
 import Modal from "react-modal";
 import "../css/form.scss";
 import { MdArrowBack } from "react-icons/md";
@@ -41,6 +42,8 @@ const DropdownIndicator = (props) => {
 };
 
 function CreateEvent() {
+  const { user } = useSelector((state) => state.auth);
+
   let navigate = useNavigate();
   let location = useLocation();
   const onGoBack = (event) => {
@@ -74,6 +77,7 @@ function CreateEvent() {
       link: currentForm.elements["link_url"].value,
       thumb: currentForm.elements["thumb"].value,
       description: currentForm.elements["event_details"].value,
+      userEmail: user.email,
     };
 
     console.table(formdata);
@@ -81,19 +85,19 @@ function CreateEvent() {
       .post("//localhost:4000/api/create-event", formdata)
       .then((response) => {
         if (response.data.error) {
-          console.log("ERRROR, UPDATE USER");
+          console.log("ERRROR");
         } else {
           setIsOpen(true);
-          console.log("SUCCESS, UPDATE USER");
+          console.log("SUCCESS, Event Created!");
         }
       });
   };
 
   return (
     <>
-    <button onClick={onGoBack} className="left-arrow" role="submit">
-          <MdArrowBack className="back-arrow"/>
-        </button>
+      <button onClick={onGoBack} className="left-arrow" role="submit">
+        <MdArrowBack className="back-arrow" />
+      </button>
       <div className="wrapper">
         <div className="create-listing-wrap">
           <h1>Create Event</h1>

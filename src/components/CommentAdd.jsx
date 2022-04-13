@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import Button from "./shared/Button";
+import { useSelector } from "react-redux";
 
 function CommentAdd({ detailsObj, handleAdd }) {
+  const { user } = useSelector((state) => state.auth);
   console.log(detailsObj.eventObject);
   const [text, setText] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
@@ -29,7 +31,9 @@ function CommentAdd({ detailsObj, handleAdd }) {
     if (text.trim().length > 10) {
       let formData = {
         text: text,
-        userName: "Test User",
+        userName: user.name,
+        userEmail: user.email,
+        userThumb: user.thumb,
       };
 
       console.table(formData);

@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+
 import axios from "axios";
 import DeleteSingleEvent from "./DeleteSingleEvent";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -7,6 +9,8 @@ import { MdArrowBack } from "react-icons/md";
 import "../css/deletetion.scss";
 
 function DeleteEventList() {
+  const { user } = useSelector((state) => state.auth);
+
   const [events, setEvents] = useState([]);
 
   let navigate = useNavigate();
@@ -15,18 +19,26 @@ function DeleteEventList() {
   };
 
   const reloadEvents = () => {
-    axios.get("http://localhost:4000/api/view-events").then((response) => {
-      if (response.status == 200 && response.data.length > 0) {
-        setEvents(response.data);
-      }
-    });
+    axios
+      .get(`http://localhost:4000/api/view-events-by-user/${user.email}`)
+      .then((response) => {
+        if (response.status == 200 && response.data.length > 0) {
+          console.log(response.data);
+          setEvents(response.data);
+        }
+      });
   };
+
   useEffect(() => {
-    axios.get("http://localhost:4000/api/view-events").then((response) => {
-      if (response.status == 200 && response.data.length > 0) {
-        setEvents(response.data);
-      }
-    });
+    axios
+      .get(`http://localhost:4000/api/view-events-by-user/${user.email}`)
+      .then((response) => {
+        if (response.status == 200 && response.data.length > 0) {
+          console.log(response.data);
+
+          setEvents(response.data);
+        }
+      });
   }, []);
 
   return (
