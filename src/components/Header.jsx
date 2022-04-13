@@ -122,6 +122,7 @@ function Header() {
                   className="row"
                   onClick={() => {
                     navigate("/create-event");
+                    closeModal();
                   }}
                 >
                   <IoCreateSharp size={30} className="icon" />
@@ -132,6 +133,7 @@ function Header() {
                   className="row"
                   onClick={() => {
                     navigate("/delete-event");
+                    closeModal();
                   }}
                 >
                   <AiOutlineUnorderedList size={30} className="icon" />
@@ -154,7 +156,13 @@ function Header() {
                 </div>
                 <ul>
                   <li>
-                    <button className="btn" onClick={onLogout}>
+                    <button
+                      className="btn"
+                      onClick={() => {
+                        onLogout();
+                        closeModal();
+                      }}
+                    >
                       <FaSignOutAlt /> Logout
                     </button>
                   </li>
