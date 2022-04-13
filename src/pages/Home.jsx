@@ -7,15 +7,15 @@ import Nav from "../components/Nav";
 function Home() {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="home">
       <Nav />
-      <div
+      {/* <div
         onClick={() => {
           navigate("/sign-up");
         }}
       >
         Sign-up
-      </div>
+      </div> */}
       <EventsList />
     </div>
   );

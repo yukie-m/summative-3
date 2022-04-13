@@ -1,6 +1,10 @@
 //  --- Utility classes
 @use "./css/colors";
 
+.html {
+  width: 100%;
+  margin: 0 auto;
+}
 .flex {
   display: flex;
 }

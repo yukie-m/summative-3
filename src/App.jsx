@@ -1,5 +1,7 @@
-import { Routes, Route, Link } from "react-router-dom";
+// import { Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import SlideRoutes from "react-slide-routes";
+import { Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import "./App.scss";
 import EventsList from "./components/EventsList";
@@ -12,13 +14,15 @@ import SignUp from "./components/SignUp";
 import EditEvent from "./components/EditEvent";
 
 function App() {
+  const location = useLocation();
+
   useEffect(() => {
     document.title = "Eventful";
   }, []);
 
   return (
-    <div className="App">
-      <Routes>
+    <>
+      <SlideRoutes location={location} duration={550}>
         <Route path="/" element={<Home />} />
         <Route path="/view-events" element={<EventsList />} />
         <Route path="/view-by-category" element={<ViewByCategory />} />
@@ -30,8 +34,8 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/update-event" element={<EditEvent />} />
         {/* <Route path='/logged-out' element={<LoggedOut />} /> */}
-      </Routes>
-    </div>
+      </SlideRoutes>
+    </>
   );
 }
 
