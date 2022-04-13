@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import Button from "./shared/Button";
 import { useSelector } from "react-redux";
+import { FiSend } from "react-icons/fi";
 
 function CommentAdd({ detailsObj, handleAdd }) {
   const { user } = useSelector((state) => state.auth);
@@ -65,7 +66,7 @@ function CommentAdd({ detailsObj, handleAdd }) {
             placeholder="Comment here..."
           />
           <Button type="submit" isDisabled={btnDisabled}>
-            Submit
+            <FiSend className="send-button" />
           </Button>
         </div>
         {message && <div className="message">{message}</div>}

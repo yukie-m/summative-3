@@ -11,7 +11,7 @@ function CommentItem({ comment }) {
           {comment.userThumb ? (
             <img src={profileThumbURL} />
           ) : (
-            <MdAccountCircle size={70} className="icon" />
+            <MdAccountCircle size={50} className="icon" />
           )}
         </div>
         <div className="comment-username">{comment.userName}</div>
