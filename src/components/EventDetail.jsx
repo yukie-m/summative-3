@@ -100,7 +100,7 @@ function EventDetail() {
               onClick={updateLikes}
               // className={`${loading ? "animate-heart" : ""}`}
             />
-            {likes}
+            ({likes})
           </div>
           <div className="event-share">
             <BsShareFill size={14} />
