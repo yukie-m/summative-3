@@ -39,12 +39,6 @@ function Header() {
     setIsOpen(false);
   }
 
-  useEffect(() => {
-    if (!user) {
-      navigate("/login");
-    }
-  }, [user, navigate]);
-
   return (
     <header className="">
       <div className="nav-wrapper">
