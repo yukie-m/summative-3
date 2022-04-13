@@ -1,5 +1,10 @@
-import { Routes, Route, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Header from "./components/Header";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Home from "./pages/Home";
 import "./App.scss";
 import EventsList from "./components/EventsList";
@@ -15,22 +20,25 @@ function App() {
   useEffect(() => {
     document.title = "Eventful";
   }, []);
-
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/view-events" element={<EventsList />} />
-        <Route path="/view-by-category" element={<ViewByCategory />} />
-
-        <Route path="/listing" element={<EventSingle />} />
-        <Route path="/event-detail" element={<EventDetail />} />
-        <Route path="/create-event" element={<CreateEvent />} />
-        <Route path="/delete-event" element={<DeleteEventList />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/update-event" element={<EditEvent />} />
-        {/* <Route path='/logged-out' element={<LoggedOut />} /> */}
-      </Routes>
+      <div className="container">
+        <Header />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/view-events" element={<EventsList />} />
+          <Route path="/view-by-category" element={<ViewByCategory />} />
+          <Route path="/listing" element={<EventSingle />} />
+          <Route path="/event-detail" element={<EventDetail />} />
+          <Route path="/create-event" element={<CreateEvent />} />
+          <Route path="/delete-event" element={<DeleteEventList />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/update-event" element={<EditEvent />} />
+        </Routes>
+      </div>
+      <ToastContainer />
     </div>
   );
 }

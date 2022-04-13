@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "../css/listings.scss";
 import EventSingle from "./EventSingle";
-import Nav from "./Nav";
+import EventFilters from "../components/EventFilters";
 
 function ViewByCategory() {
   let location = useLocation();
@@ -18,24 +18,24 @@ function ViewByCategory() {
         if (response.status == 200 && response.data.length > 0) {
           setListings(response.data);
           console.log(response.data);
+        } else {
+          setListings([]);
         }
       });
   }, [location.state]);
 
   return (
-    <>
+    <div>
+      <EventFilters />
       <div>
-        <Nav />
-        <div>
-          <h3 className="category-title"> {location.state}</h3>
-          <div className="event-list-container">
-            {listings.map((item, index) => (
-              <EventSingle detailsObj={{ ...item }} key={index} />
-            ))}
-          </div>
+        <h3 className="category-title"> {location.state}</h3>
+        <div className="event-list-container">
+          {listings.map((item, index) => (
+            <EventSingle detailsObj={{ ...item }} key={index} />
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
