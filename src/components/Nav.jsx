@@ -138,6 +138,8 @@ function Nav() {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         ariaHideApp={false}
+        closeTimeoutMS={500}
+        contentLabel="modal"
         style={{
           overlay: {
             position: "fixed",

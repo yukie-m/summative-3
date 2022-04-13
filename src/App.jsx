@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <>
       <SlideRoutes location={location} duration={550}>
         <Route path="/" element={<Home />} />
         <Route path="/view-events" element={<EventsList />} />
@@ -35,7 +35,7 @@ function App() {
         <Route path="/update-event" element={<EditEvent />} />
         {/* <Route path='/logged-out' element={<LoggedOut />} /> */}
       </SlideRoutes>
-    </div>
+    </>
   );
 }
 
