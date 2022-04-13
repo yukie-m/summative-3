@@ -4,7 +4,7 @@ import { MdAccountCircle } from "react-icons/md";
 
 function CommentItem({ comment }) {
   const profileThumbURL = comment.userThumb
-    ? "../images/" + user.thumb + ".jpg"
+    ? "../images/" + comment.userThumb + ".jpg"
     : "";
 
   return (

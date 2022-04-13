@@ -10,10 +10,12 @@ import { BiLink } from "react-icons/bi";
 import { AiOutlineComment } from "react-icons/ai";
 import { BsShareFill } from "react-icons/bs";
 import { MdArrowBack } from "react-icons/md";
+import { useSelector, useDispatch } from "react-redux";
 
 import NoImage from "./NoImage";
 
 function EventDetail() {
+  const { user } = useSelector((state) => state.auth);
   let navigate = useNavigate();
   let location = useLocation();
   const [eventObject, setEventObject] = useState({});
@@ -121,7 +123,11 @@ function EventDetail() {
         <div className="border-bottom"></div>
 
         <CommentsList commentsArray={comments} />
-        <CommentAdd detailsObj={{ eventObject }} handleAdd={addComment} />
+        {user ? (
+          <CommentAdd detailsObj={{ eventObject }} handleAdd={addComment} />
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
