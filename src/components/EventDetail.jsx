@@ -10,7 +10,8 @@ import { BiLink } from "react-icons/bi";
 import { AiOutlineComment } from "react-icons/ai";
 import { BsShareFill } from "react-icons/bs";
 import { MdArrowBack } from "react-icons/md";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { BiBookmark } from "react-icons/bi";
 
 import NoImage from "./NoImage";
 
@@ -23,7 +24,6 @@ function EventDetail() {
   //   console.log(location);
 
   const [likes, setLikes] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     loadEventDetails();
@@ -44,6 +44,7 @@ function EventDetail() {
           if (response.status === 200 && response.data != null) {
             setEventObject(response.data);
             setComments(response.data.comments.reverse());
+            setLikes(response.data.likes);
           }
         });
     }
@@ -56,7 +57,6 @@ function EventDetail() {
       })
       .then((response) => {
         setLikes(response.data.likes);
-        setTimeout(setLoading(false), 2500);
       });
   };
 
@@ -71,6 +71,9 @@ function EventDetail() {
       </div>
       <div className="detail-wrapper">
         <div>
+          <div className="bookmark">
+            <BiBookmark className="bookmark-icon" />
+          </div>
           {eventObject.thumb ? (
             <img
               className="event-image"
@@ -94,15 +97,15 @@ function EventDetail() {
         <div className="flex items-center gap-10">
           <div className="event-date">{eventObject.date}</div>
           <div className="event-comments">
-            <AiOutlineComment size={18} />({comments.length})
+            <AiOutlineComment size={21} />({comments.length})
           </div>
           <div className="event-likes">
             <FiThumbsUp
-              size={17}
+              size={19}
               onClick={updateLikes}
               // className={`${loading ? "animate-heart" : ""}`}
             />
-            {likes}
+            ({likes})
           </div>
           <div className="event-share">
             <BsShareFill size={14} />

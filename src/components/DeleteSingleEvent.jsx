@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Modal from "react-modal";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineComment } from "react-icons/ai";
 import { FiThumbsUp } from "react-icons/fi";
@@ -11,8 +12,8 @@ import NoImage from "./NoImage";
 
 function DeleteSingleEvent(props) {
   const [showPopup, setShowPopup] = useState(false);
-
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   function openModal() {
     setIsOpen(true);
@@ -48,6 +49,10 @@ function DeleteSingleEvent(props) {
           );
         }
       });
+  };
+
+  const onEditEvent = (id) => {
+    console.log(id);
   };
 
   return (
@@ -113,7 +118,12 @@ function DeleteSingleEvent(props) {
                 <p>Delete</p>
               </button>
               <p>/</p>
-              <button>
+              <button
+                onClick={() => {
+                  // onEditEvent(props.detailsObj._id);
+                  navigate("/update-event", { state: props.detailsObj._id });
+                }}
+              >
                 <p>Edit</p>
               </button>
             </div>
