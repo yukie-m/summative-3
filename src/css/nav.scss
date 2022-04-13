@@ -1,6 +1,8 @@
 @use "colors";
 @use "./font";
-
+.home {
+  width: 100%;
+}
 .nav-wrapper {
   display: flex;
   overflow: hidden;
@@ -21,6 +23,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding-right: 0.5rem;
 
     .icon {
       margin: 0 0.5rem;
