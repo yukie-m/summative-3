@@ -18,6 +18,7 @@ function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
+  const profileThumbURL = "../images/" + user.thumb + ".jpg";
 
   const onLogout = () => {
     dispatch(logout());
@@ -110,7 +111,7 @@ function Header() {
                     />
                   </div>
                   <div>
-                    <MdAccountCircle size={60} className="account-icon" />
+                    <img src={profileThumbURL} />
                     {console.log(user)}
                     <h5>{user.name}</h5>
                     <hr />

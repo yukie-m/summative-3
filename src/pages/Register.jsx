@@ -13,11 +13,20 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { AiOutlineTwitter } from "react-icons/ai";
 
 function Register() {
+  const thumb = chooseThumb();
+  console.log(thumb);
+  function chooseThumb() {
+    const images = ["blue", "green", "pink"];
+    const randInt = Math.floor(Math.random() * 3);
+    return images[randInt];
+  }
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
     password2: "",
+    thumb: thumb,
   });
 
   const { name, email, password, password2 } = formData;
@@ -58,6 +67,7 @@ function Register() {
         name,
         email,
         password,
+        thumb,
       };
 
       dispatch(register(userData));
