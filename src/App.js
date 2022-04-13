@@ -31,7 +31,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/view-events" element={<EventsList />} />
             <Route path="/view-by-category" element={<ViewByCategory />} />
-
             <Route path="/listing" element={<EventSingle />} />
             <Route path="/event-detail" element={<EventDetail />} />
             <Route path="/create-event" element={<CreateEvent />} />

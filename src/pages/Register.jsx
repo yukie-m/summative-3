@@ -5,6 +5,12 @@ import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
 import { register, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
+import "../css/signup.scss";
+
+import { AiFillEye } from "react-icons/ai";
+import { AiFillFacebook } from "react-icons/ai";
+import { AiFillLinkedin } from "react-icons/ai";
+import { AiOutlineTwitter } from "react-icons/ai";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -63,13 +69,14 @@ function Register() {
   }
 
   return (
-    <>
+    <div className="wrapper">
       <section className="heading">
-        <h1>
-          <FaUser /> Register
-        </h1>
-        <p>Please create an account</p>
+        <h1>Register</h1>
       </section>
+      <div className="login-link">
+        <p>Already have an account?</p>
+        <h3>Log in</h3>
+      </div>
 
       <section className="form">
         <form onSubmit={onSubmit}>
@@ -123,8 +130,18 @@ function Register() {
             </button>
           </div>
         </form>
+        <div className="line">
+          <div className="line-left"></div>
+          <p>or</p>
+          <div className="line-right"></div>
+        </div>
+        <div className="icons">
+          <AiFillFacebook size={35} color="#3b5998" className="sns-icon" />
+          <AiFillLinkedin size={35} color="#0e76a8" className="sns-icon" />
+          <AiOutlineTwitter size={35} color="#00acee" className="sns-icon" />
+        </div>
       </section>
-    </>
+    </div>
   );
 }
 

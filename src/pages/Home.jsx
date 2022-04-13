@@ -8,14 +8,6 @@ function Home() {
   const navigate = useNavigate();
   return (
     <div>
-      <Nav />
-      <div
-        onClick={() => {
-          navigate("/sign-up");
-        }}
-      >
-        Sign-up
-      </div>
       <EventsList />
     </div>
   );

@@ -1,8 +1,6 @@
 import React from "react";
-import Modal from "react-modal";
-import { useState, useEffect } from "react";
+import "../css/nav.scss";
 import { useNavigate } from "react-router-dom";
-
 import { IoCreateSharp } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -13,29 +11,13 @@ import { AiOutlineHistory } from "react-icons/ai";
 import { AiFillSetting } from "react-icons/ai";
 import { MdLogout } from "react-icons/md";
 import { TiLocationArrow } from "react-icons/ti";
-import "../css/nav.scss";
+import Modal from "react-modal";
 
 function Nav() {
   const navigate = useNavigate();
-  const [userChoice, setUserChoice] = useState("");
 
-  const onListingTypeSelect = (event) => {
-    setUserChoice(event.target.value);
-  };
-
-  useEffect(() => {
-    if (userChoice !== "") {
-      onStartSearch();
-    }
-  }, [userChoice]);
-
-  const onStartSearch = () => {
-    console.log(">>>>>> ", userChoice);
-    if (userChoice === "all") {
-      navigate("/");
-    } else {
-      navigate("/view-by-category", { state: userChoice });
-    }
+  const onGoBack = (event) => {
+    navigate(-1);
   };
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -91,46 +73,13 @@ function Nav() {
 
       <div className="category-slider">
         <ul className="slider-items">
-          <input
-            type="radio"
-            id="all"
-            name="listing_type"
-            onChange={onListingTypeSelect}
-            value="all"
-          />
-          <label htmlFor="all">All</label>
-          <input
-            type="radio"
-            id="finance"
-            name="listing_type"
-            onChange={onListingTypeSelect}
-            value="Finance"
-          />
-          <label htmlFor="finance">Finance</label>
-          <input
-            type="radio"
-            id="business"
-            name="listing_type"
-            onChange={onListingTypeSelect}
-            value="Business"
-          />
-          <label htmlFor="business">Business</label>
-          <input
-            type="radio"
-            id="it"
-            name="listing_type"
-            onChange={onListingTypeSelect}
-            value="IT"
-          />
-          <label htmlFor="it">IT</label>
-          <input
-            type="radio"
-            id="engineer"
-            name="listing_type"
-            onChange={onListingTypeSelect}
-            value="Engineer"
-          />
-          <label htmlFor="engineer">Engineer</label>
+          <li>Business</li>
+          <li>Finance</li>
+          <li>Health</li>
+          <li>Technology</li>
+          <li>Life</li>
+          <li>Education</li>
+          <li>International</li>
         </ul>
       </div>
 
@@ -155,7 +104,7 @@ function Nav() {
             bottom: "0",
             display: "flex",
             flexDirection: "column",
-            // justifyContent: "center",
+            justifyContent: "center",
             alignItems: "center",
             borderLeft: "1px solid #d9d9d9",
             background: "#fff",
@@ -168,8 +117,8 @@ function Nav() {
         }}
       >
         <div className="modal-account">
-          <div className="user-account">
-            <div className="close-modal">
+          <div>
+            <div>
               <IoCloseOutline
                 size={30}
                 className="icon"
@@ -179,50 +128,50 @@ function Nav() {
               />
             </div>
             <div>
-              <MdAccountCircle size={90} className="account-icon" />
+              <MdAccountCircle size={60} className="account-icon" />
               <h5>Username</h5>
+              <hr />
             </div>
           </div>
-          <div className="list-wrapper">
-            <div
-              className="row"
-              onClick={() => {
-                navigate("/create-event");
-              }}
-            >
-              <IoCreateSharp size={30} className="icon" />
-              <h5>Create Event</h5>
-            </div>
 
-            <div
-              className="row"
-              onClick={() => {
-                navigate("/delete-event");
-              }}
-            >
-              <AiOutlineUnorderedList size={30} className="icon" />
-              <h5>Your Events</h5>
-            </div>
+          <div
+            className="row"
+            onClick={() => {
+              navigate("/create-event");
+            }}
+          >
+            <IoCreateSharp size={30} className="icon" />
+            <h5>Create Event</h5>
+          </div>
 
-            <div className="row">
-              <IoBookmarkOutline size={30} className="icon" />
-              <h5>Bookmark</h5>
-            </div>
+          <div
+            className="row"
+            onClick={() => {
+              navigate("/delete-event");
+            }}
+          >
+            <AiOutlineUnorderedList size={30} className="icon" />
+            <h5>Your Events</h5>
+          </div>
 
-            <div className="row">
-              <AiOutlineHistory size={30} className="icon" />
-              <h5>History</h5>
-            </div>
+          <div className="row">
+            <IoBookmarkOutline size={30} className="icon" />
+            <h5>Bookmark</h5>
+          </div>
 
-            <div className="row">
-              <AiFillSetting size={30} className="icon" />
-              <h5>Settings</h5>
-            </div>
+          <div className="row">
+            <AiOutlineHistory size={30} className="icon" />
+            <h5>History</h5>
+          </div>
 
-            <div className="row">
-              <MdLogout size={30} className="icon" />
-              <h5>Log out</h5>
-            </div>
+          <div className="row">
+            <AiFillSetting size={30} className="icon" />
+            <h5>Settings</h5>
+          </div>
+
+          <div className="row">
+            <MdLogout size={30} className="icon" />
+            <h5>Log out</h5>
           </div>
         </div>
       </Modal>
