@@ -12,15 +12,12 @@ import { BsShareFill } from "react-icons/bs";
 import { MdArrowBack } from "react-icons/md";
 import { BiBookmark } from "react-icons/bi";
 
-import NoImage from "./NoImage";
-
 function EventDetail() {
   let navigate = useNavigate();
   let location = useLocation();
   const [eventObject, setEventObject] = useState({});
   const [comments, setComments] = useState([]);
   //   console.log(location);
-
   const [likes, setLikes] = useState([]);
 
   useEffect(() => {
@@ -70,7 +67,7 @@ function EventDetail() {
       <div className="detail-wrapper">
         <div>
           <div className="bookmark">
-            <BiBookmark className="bookmark-icon"/>
+            <BiBookmark className="bookmark-icon" />
           </div>
           {eventObject.thumb ? (
             <img
