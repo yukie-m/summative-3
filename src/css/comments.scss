@@ -1,10 +1,74 @@
+@use "./colors";
+@use "./font";
+
 .comment-card {
+  width: 95%;
+  margin: auto;
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
   margin-bottom: 20px;
+  border-bottom: 1px solid colors.$light-grey;
+  padding-bottom: 10px;
+  font-family: font.$sub-heading;
+  
+  .comment-userthumb {
+    color: colors.$dark-grey;
+  }
+
+  .comment-username {
+    font-size: small;
+    text-align: center;
+  }
+
+  .comment-text {
+    width: 75%;
+  }
 }
 
-.comment-username {
-  font-size: small;
+.input-group {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid colors.$light-grey;
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+
+  input {
+    width: 75%;
+    padding-left: 10px;
+    height: 28px;
+    border-radius: 5px;
+    border: 1px solid colors.$light-grey;
+    font-family: font.$sub-heading;
+    color: colors.$dark-grey;
+    font-weight: 600;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  Button {
+    border: none;
+    background-color: transparent;
+
+    .send-button {
+      font-size: 22px;
+      color: colors.$dark-grey;
+      transform: rotate(10deg);
+    }
+  }
 }
+
+.comments-list {
+  margin-bottom: 60px;
+}
+
+
 
