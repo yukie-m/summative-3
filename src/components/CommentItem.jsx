@@ -3,7 +3,10 @@ import "../css/comments.scss";
 import { MdAccountCircle } from "react-icons/md";
 
 function CommentItem({ comment }) {
-  const profileThumbURL = "../images/" + comment.userThumb + ".jpg";
+  const profileThumbURL = comment.userThumb
+    ? "../images/" + user.thumb + ".jpg"
+    : "";
+
   return (
     <div className="comment-card">
       <div className="">

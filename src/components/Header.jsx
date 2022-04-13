@@ -18,7 +18,7 @@ function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
-  const profileThumbURL = "../images/" + user.thumb + ".jpg";
+  const profileThumbURL = user ? "../images/" + user.thumb + ".jpg" : "";
 
   const onLogout = () => {
     dispatch(logout());
