@@ -1,0 +1,64 @@
+@use "colors";
+@use "./font";
+
+.back-arrow {
+  font-size: 25px;
+}
+
+.create-listing-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  margin-top: -80px;
+
+  h1 {
+    margin-top: 0;
+    font-family: font.$heading;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: font.$sub-heading;
+    margin-top: -30px;
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.3rem;
+  }
+  span {
+    margin: 0.3rem 0;
+  }
+  input,
+  textarea,
+  button {
+    padding: 0.7rem;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+  }
+  .hide-default {
+    appearance: none;
+  }
+
+  // textarea {
+  //   padding: 2rem;
+  // }
+  button {
+    margin-top: 1.2rem;
+    border: 2px solid colors.$green;
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 550;
+    background-color: white;
+  }
+}
+
+.check-success p {
+  margin: 0rem;
+  margin-bottom: 0.3rem;
+}

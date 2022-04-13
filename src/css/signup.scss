@@ -1,0 +1,144 @@
+@use "colors";
+@use "./font";
+
+.wrapper {
+  width: 80%;
+  margin: auto;
+  margin-top: 80px;
+
+  h1 {
+    margin: 2.5rem 0;
+    font-family: font.$heading;
+    margin-top: 0px;
+    text-align: center;
+  }
+
+  .signin-wrap {
+    width: 100%;
+    margin: auto;
+    font-family: font.$sub-heading;
+    
+    form {
+      width: 100%;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+    input {
+      border: none;
+      padding-left: 5px;
+      padding-bottom: 8px;
+      margin-bottom: 50px;
+      width: 90%;
+      font-family: font.$sub-heading;
+      border-bottom: 1px solid colors.$light-grey;
+
+      &:focus {
+        outline: none;
+      }
+
+    }
+    select {
+      font-family: font.$sub-heading;
+      color: colors.$dark-grey;
+      border: none;
+      padding-bottom: 8px;
+      margin-bottom: 50px;
+      border-bottom: 1px solid colors.$light-grey;
+      width: 92%;
+      background-color: transparent;
+
+      &:focus {
+        outline: none;
+      }
+    }
+    
+    .checkbox {
+      display: flex;
+      align-items: baseline;
+      margin-top: -50px;
+      padding: 0px;
+
+      input {
+        width: 20px;
+        margin-left: 0px;
+      }
+    }
+
+    .btn {
+      // width: 90%;
+      // margin: auto;
+      // border: 1px solid black;
+      
+      button {
+        margin-top: 1.2rem;
+        border: 2px solid colors.$navy;
+        padding: 0.7rem;
+        font-size: 1.4rem;
+        font-weight: 900;
+        background-color: white;
+        border-radius: 9px;
+        width: 95%;
+        margin: auto;
+        font-family: font.$sub-heading;
+
+        &:hover {
+          cursor: pointer;
+          }
+      }
+    }
+  }
+
+  .line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 95%;
+    margin-top: 3rem;
+
+    p {
+      font-family: font.$sub-heading;
+      color: colors.$dark-grey;
+      font-size: 16px;
+    }
+
+    .line-left,
+    .line-right {
+      border-bottom: 1px solid colors.$light-grey;
+      width: 50%;
+    }
+  }
+
+  .icons {
+    display: flex;
+    gap: 1.8rem;
+    justify-content: center;
+    margin-top: 35px;
+
+    .sns-icon {
+      &:hover {
+        cursor: pointer;
+        }
+    }
+  }
+
+  .login-link {
+    font-family: font.$sub-heading;
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    gap: 15px;
+    margin-top: 80px;
+    justify-content: center;
+
+    h3 {
+      border-bottom: 1px solid black;
+
+      &:hover {
+      cursor: pointer;
+      }
+    }
+  }
+}

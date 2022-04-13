@@ -1,0 +1,25 @@
+@use "./css/colors";
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+// icon
+.left-arrow {
+  font-size: 2.2rem;
+  border: none;
+  background-color: white;
+  margin-top: 0.8rem;
+  margin-left: 0.5rem;
+}

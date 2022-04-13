@@ -1,0 +1,87 @@
+@use "./colors";
+@use "./font";
+
+.no-image img {
+  width: 50%;
+}
+
+.event-card {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid colors.$light-grey;
+  padding-bottom: 10px;
+  font-family: font.$text;
+
+  .event-thumbnail {
+    width: 40%;
+
+    img {
+      width: 100%;
+      height: 115px;
+      object-fit: cover;
+    }
+  }
+
+  .event-details {
+    width: 55%;
+
+    .event-name {
+      margin: 0;
+      font-size: 15px;
+      margin-bottom: 5px;
+      font-family: font.$sub-heading;
+    }
+
+    .event-category {
+      border: 1px colors.$dark-grey solid;
+      border-radius: 5px;
+      color: colors.$dark-grey;
+      width: min-content;
+      padding: 2px 4px;
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+
+    .date-location {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 5px;
+
+      .event-date {
+        font-size: small;
+      }
+
+      .event-location {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+
+        .location-icon {
+          color: colors.$navy;
+        }
+      }
+    }
+
+    .flex {
+      display: flex;
+      width: 50%;
+
+      .event-comments {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+      }
+
+      .event-likes {
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+      }
+    }
+  }
+}
