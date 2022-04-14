@@ -67,7 +67,7 @@
   .search-by-location {
     display: flex;
     align-items: center;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 
     input {
       width: 87%;
@@ -92,6 +92,7 @@
   width: 90%;
   margin: auto;
   overflow: scroll;
+  margin-bottom: 25px;
 
   .slider-items {
     list-style-type: none;

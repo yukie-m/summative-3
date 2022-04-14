@@ -39,35 +39,41 @@
   background-color: white;
 
   .animation-logo {
-    width: 250px;
+    width: 280px;
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 20%;
-    animation-name: secondAnimation;
-    animation-duration: 1.5s;
+    animation-name: animation;
+    animation-duration: 3s;
     animation-delay: 1s;
     animation-fill-mode: both;
     animation-timing-function: ease-in-out;
   }
 }
 
-@keyframes firstAnimation {
+
+// @keyframes animation {
+//   0% {
+//     opacity: 0;
+//   }
+
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+@keyframes animation {
   0% {
     opacity: 0;
   }
 
-  100% {
-    transform: translate(0);
-  }
-}
-
-@keyframes secondAnimation {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
+  40% {
     opacity: 1;
   }
+
+  70% {
+    opacity: 0;
+  }
 }
+
 
