@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import Button from "./shared/Button";
+import { FiSend } from "react-icons/fi";
 
 function CommentAdd({ detailsObj, handleAdd }) {
   console.log(detailsObj.eventObject);
@@ -61,7 +62,7 @@ function CommentAdd({ detailsObj, handleAdd }) {
             placeholder="Comment here..."
           />
           <Button type="submit" isDisabled={btnDisabled}>
-            Submit
+          <FiSend className="send-button" />
           </Button>
         </div>
         {message && <div className="message">{message}</div>}
