@@ -4,6 +4,7 @@ import SlideRoutes from "react-slide-routes";
 import { Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import "./App.scss";
+import Animation from "./components/Animation";
 import EventsList from "./components/EventsList";
 import EventSingle from "./components/EventSingle";
 import EventDetail from "./components/EventDetail";
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <>
+    <Animation/>
       <SlideRoutes location={location} duration={550}>
         <Route path="/" element={<Home />} />
         <Route path="/view-events" element={<EventsList />} />

@@ -28,3 +28,46 @@
   margin-top: 0.8rem;
   margin-left: 0.5rem;
 }
+
+.animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: white;
+
+  .animation-logo {
+    width: 250px;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    animation-name: secondAnimation;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes firstAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes secondAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
