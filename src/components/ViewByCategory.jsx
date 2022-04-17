@@ -25,7 +25,7 @@ function ViewByCategory() {
   }, [location.state]);
 
   return (
-    <div>
+    <div className="slide-container">
       <EventFilters />
       <div>
         <h3 className="category-title"> {location.state}</h3>

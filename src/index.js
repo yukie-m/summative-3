@@ -18,6 +18,14 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
+const animationPage = document.querySelector(".animation");
+
+function killAnimationPage() {
+  animationPage.style.display = "none";
+}
+
+setTimeout(killAnimationPage, 3000);
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA

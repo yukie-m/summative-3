@@ -30,7 +30,7 @@ function EventFilters() {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="search-section">
         <div className="search-by-words">
           <input

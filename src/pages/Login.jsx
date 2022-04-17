@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -56,12 +55,9 @@ function Login() {
   }
 
   return (
-    <>
+    <div className="wrapper">
       <section className="heading">
-        <h1>
-          <FaSignInAlt /> Login
-        </h1>
-        <p>Login</p>
+        <h1>Login</h1>
       </section>
 
       <section className="form">
@@ -96,7 +92,7 @@ function Login() {
           </div>
         </form>
       </section>
-    </>
+    </div>
   );
 }
 

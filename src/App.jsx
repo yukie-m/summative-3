@@ -1,12 +1,20 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import SlideRoutes from "react-slide-routes";
+
 import Home from "./pages/Home";
 import "./App.scss";
+import Animation from "./components/Animation";
 import EventsList from "./components/EventsList";
 import EventSingle from "./components/EventSingle";
 import EventDetail from "./components/EventDetail";
@@ -17,17 +25,21 @@ import SignUp from "./components/SignUp";
 import EditEvent from "./components/EditEvent";
 
 function App() {
+  const location = useLocation();
+
   useEffect(() => {
     document.title = "Eventful";
   }, []);
+
   return (
     <div className="App">
+      <Animation />
       <div className="container">
         <Header />
-        <Routes>
+        <SlideRoutes location={location} duration={550}>
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Home />} />
           <Route path="/view-events" element={<EventsList />} />
           <Route path="/view-by-category" element={<ViewByCategory />} />
           <Route path="/listing" element={<EventSingle />} />
@@ -36,7 +48,7 @@ function App() {
           <Route path="/delete-event" element={<DeleteEventList />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/update-event" element={<EditEvent />} />
-        </Routes>
+        </SlideRoutes>
       </div>
       <ToastContainer />
     </div>

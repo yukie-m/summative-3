@@ -13,8 +13,6 @@ import { MdArrowBack } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { BiBookmark } from "react-icons/bi";
 
-import NoImage from "./NoImage";
-
 function EventDetail() {
   const { user } = useSelector((state) => state.auth);
   let navigate = useNavigate();
@@ -22,7 +20,6 @@ function EventDetail() {
   const [eventObject, setEventObject] = useState({});
   const [comments, setComments] = useState([]);
   //   console.log(location);
-
   const [likes, setLikes] = useState([]);
 
   useEffect(() => {
@@ -66,7 +63,7 @@ function EventDetail() {
 
   return (
     <div>
-      <div onClick={onGoBack} className="button-orange" role="submit">
+      <div onClick={onGoBack} className="back-button" role="submit">
         <MdArrowBack className="back-arrow" />
       </div>
       <div className="detail-wrapper">
